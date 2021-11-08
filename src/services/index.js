@@ -5,3 +5,12 @@ import firebaseConfig from './firebaseConfig';
 
 const fs = firebase.initializeApp(firebaseConfig);
 const db = fs.firestore();
+
+export const loginPage = (email, password) => {
+  if (firebase.auth().currentUser) {
+    firebase.auth().signOut();
+  }
+  return firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password);
+};
