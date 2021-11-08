@@ -1,10 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
 
+import ReactDOM from 'react-dom';
+import App from './App'
+import { BrowserRouter } from 'react-router-dom';
+//
+//import Register from './pages/Register';
+//import PrivateRoute from './PrivateRoute';
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </BrowserRouter>,
+  document.getElementById("root")
 );
