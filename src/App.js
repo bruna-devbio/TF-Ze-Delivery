@@ -1,16 +1,22 @@
 import React from 'react';
-import Login from './pages/Login/Login'
-import Home from './pages/Home/Home'
-import Register from './pages/Register/Register'
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login/login'
+import Home from './pages/Home/home'
+import Register from './pages/Register/register'
+import Cart from './pages/Cart/cart';
+import Vouchers from './pages/Vouchers/vouchers';
+
+
+import './App.css';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />}/>
-      <Route path="/Register" element={<Register />}/>
-      <Route path="/Login" element={<Login />}/>
+      <Route path="/register" element={<Register />}/>
+      <Route path="/login" element={<Login />}/>
+      <Route path="/cart" element={<Cart />}/>
+      <Route path="/vouchers" element={<Vouchers />}/>
     </Routes>
   );
 }

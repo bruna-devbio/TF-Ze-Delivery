@@ -1,8 +1,8 @@
 import { React, useState } from "react"
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+import { loginPage } from "../../services/index";
 
 
 const Login = () => {
@@ -22,7 +22,11 @@ const Login = () => {
 	}
 
 	const handleClick = (event) => {
-		event.preventDefault()
+		loginPage(values.email, values.password).then(() => {
+			alert("entrouuuu")
+		}).catch(() => {
+			alert('erro')
+		})
 	}
 
 	return (
@@ -30,7 +34,6 @@ const Login = () => {
 			<div className='logo' />
 			<form className='login'>
 				<div className='form-group'>
-
 					<Input
 						type='text'
 						placeholder='E-mail'
@@ -54,13 +57,12 @@ const Login = () => {
 				</div>
 
 				<Button
-					type='submit'
-					buttonText='LOGIN'
+					type='button'
+					buttonText='ENTRAR'
 					className='button'
 					buttonOnClick={handleClick}
 				/>
-
-				<p className='go-to'>Não tem uma conta? <Link to='./Register/index.js'>
+				<p className='go-to'>Não tem uma conta? <Link to='/register'>
 					Cadastre-se
 				</Link></p>
 			</form>
@@ -68,14 +70,4 @@ const Login = () => {
 	)
 }
 
-
 export default Login;
-
-const Login = () => {
-  return (
-    <h1>Login</h1>
-  )
-}
-
-export default Login
-
