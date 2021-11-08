@@ -1,11 +1,14 @@
+import React from 'react';
+
 import ReactDOM from 'react-dom';
+import App from './App'
 import { BrowserRouter } from 'react-router-dom';
-
-import App from './App';
-
+//
+//import Register from './pages/Register';
+//import PrivateRoute from './PrivateRoute';
 ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
