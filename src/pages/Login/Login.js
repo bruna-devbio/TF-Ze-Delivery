@@ -1,15 +1,17 @@
 import { React, useState } from "react"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 
+
 const Login = () => {
 
 	const [values, setValues] = useState({
-    email: '',
-    password: '',
+		email: '',
+		password: '',
 
-  })
+	})
 	console.log(values);
 
 	const onChangeValues = (event) => {
@@ -18,7 +20,11 @@ const Login = () => {
 			[event.target.name]: event.target.value
 		})
 	}
-	
+
+	const handleClick = (event) => {
+		event.preventDefault()
+	}
+
 	return (
 		<section className='container'>
 			<div className='logo' />
@@ -32,7 +38,7 @@ const Login = () => {
 						name='email'
 						onChange={onChangeValues}
 						value={values.email}
-						>
+					>
 					</Input>
 				</div>
 
@@ -51,7 +57,8 @@ const Login = () => {
 					type='submit'
 					buttonText='LOGIN'
 					className='button'
-          />
+					buttonOnClick={handleClick}
+				/>
 
 				<p className='go-to'>Não tem uma conta? <Link to='./Register/index.js'>
 					Cadastre-se
