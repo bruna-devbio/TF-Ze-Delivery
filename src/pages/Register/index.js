@@ -20,7 +20,6 @@ const Register = () => {
 		name: '',
 		email: '',
 		password: '',
-		data: '',
 		cpf: '',
 		age: '',
 
