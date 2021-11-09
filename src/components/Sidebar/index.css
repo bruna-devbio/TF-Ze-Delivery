@@ -40,6 +40,11 @@
     cursor: pointer;
 }
 
+.sidebar-buy-vouchers.active,
+.sidebar-see-vouchers.active {
+    background-color: #515255;
+}
+
 .sidebar-buy-vouchers:hover,
 .sidebar-see-vouchers:hover {
     background-color: #515255;

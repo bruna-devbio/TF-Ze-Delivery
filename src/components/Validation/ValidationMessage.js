@@ -1,5 +1,7 @@
+import './index.css';
+
 const ValidationMessage = (props) => {
-  return(
+  return (
     <div className='validation-message'>{props.children}</div>
   )
 }
