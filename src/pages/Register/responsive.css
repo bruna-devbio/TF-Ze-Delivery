@@ -11,6 +11,7 @@
     .register-form-group {
         width: 100vw;
         margin: 0rem 0rem;
+        min-height: 100vh;
     }
 
     .register-H1 {
