@@ -10,12 +10,13 @@ import './index.css';
 import './responsive.css';
 
 const Register = () => {
-
 	const [values, setValues] = useState({
+		name: '',
 		email: '',
 		password: '',
 		data: '',
 		cpf: '',
+		age: '',
 
 	});
 
@@ -55,46 +56,46 @@ const Register = () => {
 							Cadastro
 						</h1>
 						<Link to='/login' className='register-back-login-mobile'>← Voltar para o Login</Link>
-						<label className='register-label'>Nome</label>
 						<Input
 							type='name'
 							placeholder='Digite seu nome'
 							className='register-input'
 							name='nome'
 							onChange={onChangeValues}
-							value={values.nome}
+							value={values.name}
 						>
 						</Input>
-						<label className='register-label'>E-mail</label>
 						<Input
 							type='email'
+							placeholder='Digite seu e-mail'
 							className='register-input'
 							name='email'
 							onChange={onChangeValues}
 							value={values.email}
 						>
 						</Input>
-
-						<label className='register-label'>Data de Nascimento</label>
-						<Input
-							type='date'
-							className='register-input'
-							name='data'
-							onChange={onChangeValues}
-							value={values.data}>
-						</Input>
-						<label className='register-label'>CPF</label>
 						<Input
 							type='text'
-							placeholder='999.999.999-99'
+							placeholder='Digite o seu CPF'
 							className='register-input'
 							name='cpf'
 							onChange={onChangeValues}
 							value={values.cpf}>
 						</Input>
-						<label className='register-label'>Senha</label>
+						<Input
+							type='number'
+							min='18'
+							max='100'
+							placeholder='Digite sua idade'
+							className='register-input'
+							name='age'
+							onChange={onChangeValues}
+							value={values.age}
+						>
+						</Input>
 						<Input
 							type='password'
+							placeholder='Digite sua senha'
 							className='register-input'
 							name='password'
 							onChange={onChangeValues}

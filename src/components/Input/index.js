@@ -7,7 +7,9 @@ const Input = ({
     onChange,
     value,
     name,
-    type
+    type,
+    min,
+    max,
 }) => {
     return (
         <input type={type}
@@ -16,6 +18,8 @@ const Input = ({
             name={name}
             onChange={onChange}
             value={value}
+            min={min}
+            max={max}
             required>
         </input>
     )

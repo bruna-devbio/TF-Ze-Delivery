@@ -24,6 +24,7 @@ const Login = () => {
 		})
 	};
 
+
 	const handleClick = (event) => {
 		event.preventDefault()
 		loginPage(values.email, values.password).then(() => {
