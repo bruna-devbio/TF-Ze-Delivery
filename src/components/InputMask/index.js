@@ -2,14 +2,11 @@ import React from 'react';
 import InputMask from 'react-input-mask';
 
 
-const InputMasked = ({
-  value,
-  onChange,
-  name,
-  mask
-}) => {
+const InputMasked = ({type, placeholder, value, onChange, name, mask }) => {
 
-  const onlyNumbers = (str) => str.replace(/[^0-9]/g, '');
+  /*const onlyNumbers = (str) => str.replace(/[^0-9]/g, '');
+  
+
   function handleChange(e) {
     onChange({
       ...e,
@@ -19,15 +16,17 @@ const InputMasked = ({
         value: onlyNumbers(e.target.value)
       }
     });
-  }
+  }*/
 
   // tela cadastro
   return (
     <InputMask
-      name="cpf"
+      name={name}
+      placeholder={placeholder}
+      type={type}
       mask={mask}
       value={value}
-      onChange={handleChange}
+      onChange={onChange}
     />
   );
   // 

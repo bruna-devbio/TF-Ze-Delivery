@@ -8,6 +8,7 @@ import logoMobile from "../../assets/img/LogoMobile.png";
 import { registerPage } from '../../services/index';
 import ValidateInputs from "./validationRegister";
 import ValidationMessage from "../../components/Validation/ValidationMessage";
+import InputMasked from "../../components/InputMask";
 import './index.css';
 import './responsive.css';
 
@@ -81,14 +82,15 @@ const Register = () => {
 						>
 						</Input>
 						{errors.email && <ValidationMessage>{errors.email}</ValidationMessage>}
-						<Input
+						<InputMasked
+							mask='999.999.999-99'
 							type='text'
 							placeholder='Digite o seu CPF'
 							className='register-input'
 							name='cpf'
 							onChange={onChangeValues}
 							value={values.cpf}>
-						</Input>
+						</InputMasked>
 						{errors.cpf && <ValidationMessage>{errors.cpf}</ValidationMessage>}
 						<Input
 							type='number'
