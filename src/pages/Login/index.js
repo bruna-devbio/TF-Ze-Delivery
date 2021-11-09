@@ -37,7 +37,6 @@ const Login = () => {
 		loginPage(values.email, values.password).then(() => {
 			navigate('/home')
 		}).catch(() => {
-			alert('erro')
 		})
 	};
 
