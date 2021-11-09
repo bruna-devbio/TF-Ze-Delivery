@@ -25,8 +25,6 @@ export const registerPage = (email, password) => {
     .createUserWithEmailAndPassword(email, password);
 };
 
-<<<<<<< HEAD
-=======
 export const signInGoogleAccount = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -34,4 +32,3 @@ export const signInGoogleAccount = () => {
     .auth()
     .signInWithPopup(provider);
 };
->>>>>>> b4e3a4360f9d49262fa8e61c8b020d409765ce80

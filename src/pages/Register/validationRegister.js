@@ -1,8 +1,13 @@
 function ValidateInputs(values) {
   let errors = {}
 
+  if(!values.name) {
+    errors.name = "Por favor preencha o seu nome"
+    errors.empty = false
+ }
+
   if (!values.email) {
-      errors.email = "Por favor preencha o campo de e-mail"
+      errors.email = "Por favor preencha seu e-mail"
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = "Formato de e-mail inválido"
       errors.empty = false
