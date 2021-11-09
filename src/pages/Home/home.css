@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    --amarelo: #FFC629;
+    --cinza: #363739;
+    --font: 'Roboto','Poppins'
+}
+
+.container {
+    background-color: var(--amarelo);
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+.img-home{
+    text-align: center;
+}
+
+.img-maria-home{
+    padding: 2rem;
+    margin-left: 15rem;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texto-home {
+    font-family: var(--font);
+    text-align: center;
+    padding: 0.2rem;
+}
+
+.div-btn-home{
+    text-align: center;
+}
+
+.button-home{
+    background: var(--cinza);
+    border-radius: 10px;
+    width: 20rem;
+    height: 2.5rem;
+    border-style: none;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    margin-top: 2rem;
+    font-family: var(--font);
+    color: white;
+}
+
+.button-home:hover{
+    color: var(--amarelo);
+    cursor: pointer;
+}
+
