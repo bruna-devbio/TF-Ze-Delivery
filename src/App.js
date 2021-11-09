@@ -1,22 +1,20 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Login from './pages/Login/login'
-import Home from './pages/Home/home'
-import Register from './pages/Register/register'
-import Cart from './pages/Cart/cart';
-import Vouchers from './pages/Vouchers/vouchers';
-
-
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login'
+import Welcome from './pages/Welcome'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard';
+import { PageNotFound } from './pages/PageNotFound';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />}/>
-      <Route path="/register" element={<Register />}/>
-      <Route path="/login" element={<Login />}/>
-      <Route path="/cart" element={<Cart />}/>
-      <Route path="/vouchers" element={<Vouchers />}/>
+      <Route path="/" element={<Welcome />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/home" element={<Dashboard />} />
+      <Route path='*' exact={true} element={<PageNotFound />} />
     </Routes>
   );
 }
