@@ -1,9 +1,10 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../Input";
-// import imgVoucher from "../../assets/img/imgVoucher.png";
+import imgVoucher from "../../assets/img/imgVoucher.png";
 import Button from "../Button";
 import "./index.css";
+import "./responsive.css";
 
 const BuyVouchers = () => {
 
@@ -38,7 +39,7 @@ const BuyVouchers = () => {
                 <div className="voucher-div-img">
                     <img
                         className="voucher-img"
-                        // src={imgVoucher}
+                        src={imgVoucher}
                         alt="imagem ilustrativa de um voucher"
                     />
                 </div>

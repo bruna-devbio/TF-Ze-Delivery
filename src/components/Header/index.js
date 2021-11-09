@@ -5,7 +5,8 @@ import logoPreto from '../../assets/img/LogoPreto.png';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const Header = ({
-  children
+  show,
+  buy,
 }) => {
   return (
     <header>
@@ -20,7 +21,8 @@ const Header = ({
         </div>
         <div className='header-title'>
           <h1 className='header-h1'>
-            {children}
+            {show && 'Consulta de voucher'}
+            {buy && 'Compra de voucher'}
           </h1>
         </div>
       </div>

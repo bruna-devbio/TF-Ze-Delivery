@@ -1,0 +1,28 @@
+@media(max-width: 930px) {
+
+
+    .voucher-div-img {
+        align-items: center;
+        text-align: center;
+        padding: 0.8rem 0rem;
+    }
+
+    .voucher-div-img {
+        padding: 0rem 0rem 0.8rem;
+    }
+
+
+    .voucher-text {
+        text-align: center;
+        margin: 0.2rem;
+    }
+
+    .voucher-button {
+        margin: 1rem 0.3rem 0.2rem;
+        background-color: var(--cinza);
+    }
+
+    .voucher-button:hover {
+        background-color: var(--amarelo);
+    }
+}
