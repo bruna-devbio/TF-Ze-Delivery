@@ -23,3 +23,4 @@ export const registerPage = (email, password) => {
     .auth()
     .createUserWithEmailAndPassword(email, password);
 };
+

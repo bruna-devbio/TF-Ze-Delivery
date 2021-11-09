@@ -1,17 +1,23 @@
 import { React, useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import { loginPage } from "../../services/index";
+import ValidateInputs from "./validationLogin";
+import ValidationMessage from "../../components/Validation/ValidationMessage";
 
 
 const Login = () => {
+	const navigate = useNavigate();
+
+	const [errors, setError] = useState({})
+
 	const [values, setValues] = useState({
 		email: '',
 		password: '',
 
 	})
-	console.log(values);
+
 
 	const onChangeValues = (event) => {
 		setValues({
@@ -22,8 +28,9 @@ const Login = () => {
 
 	const handleClick = (event) => {
 		event.preventDefault()
+		setError(ValidateInputs(values))
 		loginPage(values.email, values.password).then(() => {
-      alert('entrouuuu')
+			navigate('/cart')
 		}).catch(() => {
 			alert('erro')
 		})
@@ -43,6 +50,7 @@ const Login = () => {
 						value={values.email}
 					>
 					</Input>
+					{errors.email && <ValidationMessage>{errors.email}</ValidationMessage>}
 				</div>
 
 				<div className='form-group'>
@@ -54,6 +62,7 @@ const Login = () => {
 						onChange={onChangeValues}
 						value={values.password}>
 					</Input>
+					{errors.password && <ValidationMessage>{errors.password}</ValidationMessage>}
 				</div>
 
 				<Button
