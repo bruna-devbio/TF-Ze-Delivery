@@ -5,7 +5,7 @@ import mariaVoucherHome from "../../assets/img/LogoMobile.png";
 import "./index.css";
 import "./responsive.css";
 
-const Home = () => {
+const Welcome = () => {
 
   const navigate = useNavigate();
   navigate('/Login')
@@ -42,4 +42,4 @@ const Home = () => {
     </main>
   )
 }
-export default Home;
+export default Welcome;

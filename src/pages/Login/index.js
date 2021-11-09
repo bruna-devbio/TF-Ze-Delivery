@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-import { loginPage } from "../../services/index";
+import { loginPage, signInGoogleAccount } from "../../services/index";
 import logoAmarelo from "../../assets/img/LogoAmarelo.png";
 import nomeAmarelo from "../../assets/img/NomeAmarelo.png";
 import logoMobile from "../../assets/img/LogoMobile.png";
@@ -28,6 +28,15 @@ const Login = () => {
 		event.preventDefault()
 		loginPage(values.email, values.password).then(() => {
 			alert('login funcionando')
+		}).catch(() => {
+			alert('erro')
+		})
+	};
+
+	const loginGoogle = (event) => {
+		event.preventDefault()
+		signInGoogleAccount().then(() => {
+			alert('entrou')
 		}).catch(() => {
 			alert('erro')
 		})
@@ -74,7 +83,8 @@ const Login = () => {
 						<Button
 							type='button'
 							className='login-button'
-							buttonOnClick={handleClick}>ENTRAR</Button>
+							buttonOnClick={handleClick}
+						>ENTRAR</Button>
 						<p className='login-p'>Não possui cadastro?</p>
 						<Link to='/register' className='login-register'>
 							Crie sua conta
@@ -84,7 +94,8 @@ const Login = () => {
 						</p>
 						<Button
 							type='button'
-							className='login-button-google'>
+							className='login-button-google'
+							buttonOnClick={loginGoogle}>
 							<img className="logo-google" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="logo-google" />
 							ENTRAR COM O GOOGLE
 						</Button>

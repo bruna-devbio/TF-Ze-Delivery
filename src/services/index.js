@@ -24,3 +24,11 @@ export const registerPage = (email, password) => {
     .auth()
     .createUserWithEmailAndPassword(email, password);
 };
+
+export const signInGoogleAccount = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  return firebase
+    .auth()
+    .signInWithPopup(provider);
+};
