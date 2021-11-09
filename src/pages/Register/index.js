@@ -12,8 +12,8 @@ import './index.css';
 import './responsive.css';
 
 const Register = () => {
-  const navigate = useNavigate()
-  
+	const navigate = useNavigate()
+
 	const [errors, setError] = useState({})
 
 	const [values, setValues] = useState({
@@ -36,10 +36,9 @@ const Register = () => {
 	const handleClick = (event) => {
 		event.preventDefault()
 		setError(ValidateInputs(values))
-		registerPage(values.email, values.password).then(() => {	
-				navigate('/login')
+		registerPage(values.email, values.password).then(() => {
+			navigate('/login')
 		}).catch(() => {
-			navigate('/')
 		})
 	};
 
@@ -74,7 +73,7 @@ const Register = () => {
 							onChange={onChangeValues}
 							value={values.name}
 						>
-					{errors.name && <ValidationMessage>{errors.name}</ValidationMessage>}
+							{errors.name && <ValidationMessage>{errors.name}</ValidationMessage>}
 						</Input>
 						<Input
 							type='email'
@@ -85,7 +84,7 @@ const Register = () => {
 							value={values.email}
 						>
 						</Input>
-					{errors.email && <ValidationMessage>{errors.email}</ValidationMessage>}
+						{errors.email && <ValidationMessage>{errors.email}</ValidationMessage>}
 						<Input
 							type='text'
 							placeholder='Digite o seu CPF'
@@ -115,7 +114,7 @@ const Register = () => {
 							onChange={onChangeValues}
 							value={values.password}>
 						</Input>
-					{errors.password && <ValidationMessage>{errors.password}</ValidationMessage>}
+						{errors.password && <ValidationMessage>{errors.password}</ValidationMessage>}
 						<Button
 							type='button'
 							className='register-button'
