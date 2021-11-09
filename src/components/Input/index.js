@@ -15,7 +15,8 @@ const Input = ({
             className={className}
             name={name}
             onChange={onChange}
-            value={value}>
+            value={value}
+            required>
         </input>
     )
 }

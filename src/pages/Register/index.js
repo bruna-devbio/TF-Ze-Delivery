@@ -37,8 +37,12 @@ const Register = () => {
 
 	return (
 		<section className='register-container'>
-			<Link to='/login' className='register-back-login'>← Voltar para o Login</Link>
+			<div className='register-logo'>
+				<img className='register-logo-black' src={logoPreto} alt='logo' />
+				<img className='register-name-black' src={nomePreto} alt='logo' />
+			</div>
 			<div className='register-form-group'>
+				<Link to='/login' className='register-back-login'>← Voltar para o Login</Link>
 				<h1 className='register-H1'>
 					Cadastro
 				</h1>
@@ -51,6 +55,7 @@ const Register = () => {
 							Cadastro
 						</h1>
 						<Link to='/login' className='register-back-login-mobile'>← Voltar para o Login</Link>
+						<label className='register-label'>Nome</label>
 						<Input
 							type='name'
 							placeholder='Digite seu nome'
@@ -60,9 +65,9 @@ const Register = () => {
 							value={values.nome}
 						>
 						</Input>
+						<label className='register-label'>E-mail</label>
 						<Input
 							type='email'
-							placeholder='Digite seu e-mail'
 							className='register-input'
 							name='email'
 							onChange={onChangeValues}
@@ -70,25 +75,26 @@ const Register = () => {
 						>
 						</Input>
 
+						<label className='register-label'>Data de Nascimento</label>
 						<Input
 							type='date'
-							placeholder='Digite sua data de nascimento'
 							className='register-input'
 							name='data'
 							onChange={onChangeValues}
 							value={values.data}>
 						</Input>
+						<label className='register-label'>CPF</label>
 						<Input
 							type='text'
-							placeholder='Digite o seu CPF'
+							placeholder='999.999.999-99'
 							className='register-input'
 							name='cpf'
 							onChange={onChangeValues}
 							value={values.cpf}>
 						</Input>
+						<label className='register-label'>Senha</label>
 						<Input
 							type='password'
-							placeholder='Digite sua senha'
 							className='register-input'
 							name='password'
 							onChange={onChangeValues}
@@ -101,14 +107,6 @@ const Register = () => {
 						>CADASTRAR</Button>
 					</form>
 				</fieldset>
-			</div>
-			<div className='register-logo'>
-				<div className='register-div-logo1'>
-					<img className='register-logo-black' src={logoPreto} alt='logo' />
-				</div>
-				<div className='register-div-logo'>
-					<img className='register-name-black' src={nomePreto} alt='logo' />
-				</div>
 			</div>
 		</section>
 	)
