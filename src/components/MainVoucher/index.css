@@ -1,0 +1,50 @@
+.container{
+    text-align: center;
+}
+.div-input{
+    text-align: center;
+    margin-top: 2rem;
+    
+}
+
+.label-voucher{
+    font-weight: bold;
+}
+
+.voucher-input{
+    text-align: center;
+}
+
+.div-img{
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.text{
+    text-align: center;
+    margin: 0.2rem;
+}
+
+.title{
+    padding: 2rem;
+}
+
+.voucher-button{
+    margin: 0rem 0.3rem;
+    color: #fff;
+    background-color: var(--amarelo);
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.voucher-button:hover {
+    background-color: var(--cinza);
+    transition: all ease 0.6s;
+}
+
+.div-button-voucher{
+    text-align: center;
+    justify-content: center;
+}
