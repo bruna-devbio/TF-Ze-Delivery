@@ -22,7 +22,7 @@ function ValidateInputs(values) {
     }
 
     if (!values.age) {
-        errors.data = "Por favor preencha a sua data de nascimento"
+        errors.age = "Por favor preencha a sua idade"
         errors.empty = false
     }
 

@@ -15,7 +15,6 @@ const Register = () => {
 	const navigate = useNavigate()
 
 	const [errors, setError] = useState({})
-
 	const [values, setValues] = useState({
 		name: '',
 		email: '',
@@ -39,7 +38,6 @@ const Register = () => {
 		}).catch(() => {
 		})
 	};
-
 	const id = localStorage.getItem('uid')
 	console.log(id);
 
@@ -64,15 +62,15 @@ const Register = () => {
 						</h1>
 						<Link to='/login' className='register-back-login-mobile'>← Voltar para o Login</Link>
 						<Input
-							type='name'
+							type='text'
 							placeholder='Digite seu nome'
 							className='register-input'
 							name='name'
 							onChange={onChangeValues}
 							value={values.name}
 						>
-							{errors.name && <ValidationMessage>{errors.name}</ValidationMessage>}
 						</Input>
+						{errors.name && <ValidationMessage>{errors.name}</ValidationMessage>}
 						<Input
 							type='email'
 							placeholder='Digite seu e-mail'
