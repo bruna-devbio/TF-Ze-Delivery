@@ -5,16 +5,18 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import InventoryIcon from '@mui/icons-material/Inventory';
 
 const Navbar = ({
+    show,
+    buy,
     setShow,
     setBuy,
 }) => {
     return (
         <div className='navbar-container'>
-            <div className='navbar-buy-vouchers' onClick={() => setBuy(true, setShow(false))}>
+            <div className={`navbar-buy-vouchers ${buy && 'active'}`} onClick={() => setBuy(true, setShow(false))}>
                 <ShoppingCartIcon />
                 <p className='navbar-p'>COMPRAR VOUCHERS</p>
             </div>
-            <div className='navbar-see-vouchers' onClick={() => setShow(true, setBuy(false))}>
+            <div className={`navbar-see-vouchers ${show && 'active'}`} onClick={() => setShow(true, setBuy(false))}>
                 <InventoryIcon />
                 <p className='navbar-p'>CONSULTAR VOUCHERS</p>
             </div>

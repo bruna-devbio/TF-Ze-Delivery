@@ -24,6 +24,11 @@
     cursor: pointer;
 }
 
+.navbar-buy-vouchers.active,
+.navbar-see-vouchers.active {
+    background-color: #ffd45f;
+}
+
 .navbar-buy-vouchers:hover,
 .navbar-see-vouchers:hover {
     background-color: #ffd45f;
@@ -40,5 +45,5 @@
 
 .header-h1 {
     font-weight: bold;
-    
+
 }
