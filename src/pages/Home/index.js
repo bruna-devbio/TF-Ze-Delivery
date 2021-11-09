@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 import Button from "../../components/Button";
+import mariaVoucherHome from "../../assets/img/LogoMobile.png";
 import "./index.css";
+import "./responsive.css";
 
 const Home = () => {
 
@@ -9,17 +11,17 @@ const Home = () => {
   navigate('/Login')
 
   return (
-    <main className="container">
-      <div className="img-home">
+    <main className="home-container">
+      <div className="home-img">
         <img
-          className="img-maria-home"
+          className="home-img-maria"
           src={mariaVoucherHome}
           alt="Logo Maria Voucher"
         />
       </div>
 
-      <div className="texto-home">
-        <h1 className="titulo-home">Seja bem-vinde!</h1>
+      <div className="home-texto">
+        <h1 className="home-titulo">Seja bem-vinde!</h1>
 
         <h3>Saudades de um Happy Hour né minha filha?</h3>
 
@@ -29,13 +31,13 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="div-btn-home">
+      <div className="home-div-btn">
         <Button
           type="submit"
-          buttonText="CONTINUAR"
-          className="button-home"
-          buttonOnClick={navigate}
-        />
+          className="home-button"
+          buttonOnClick={navigate}>
+          CONTINUAR
+        </Button>
       </div>
     </main>
   )

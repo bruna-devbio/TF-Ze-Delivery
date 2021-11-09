@@ -1,6 +1,6 @@
 .register-container {
     display: flex;
-    background-color: #363739;
+    background-color: var(--cinza);
 }
 
 .register-form-group {
@@ -15,7 +15,7 @@
 .register-H1 {
     margin: 1rem 0rem;
     font-size: 2rem;
-    color: #FFC629;
+    color: var(--amarelo);
 }
 
 .register-H1-mobile {
@@ -40,12 +40,12 @@
 .register-button {
     margin: 1rem 0.3rem 0rem;
     color: #fff;
-    background-color: #FFC629;
+    background-color: var(--amarelo);
     font-weight: bold;
 }
 
 .register-button:hover {
-    background-color: #363739;
+    background-color: var(--cinza);
     transition: all ease 0.6s;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .register-p {
-    border-top: 1px solid rgba(0, 0, 0, 0.11);
+    border-top: 1px solid #0000001c;
     margin: 0.2rem 0.2rem 0.2rem;
     padding: 0.8rem 0rem 0rem;
     font-size: 0.9rem;
@@ -73,13 +73,13 @@
 }
 
 .register-back-login:hover {
-    color: #FFC629;
+    color: var(--amarelo);
     text-decoration: underline;
     transition: all ease 0.5s;
 }
 
 .register-logo {
-    background-color: #FFC629;
+    background-color: var(--amarelo);
     width: 50%;
     height: 100vh;
 }

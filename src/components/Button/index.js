@@ -1,15 +1,18 @@
 import React from 'react';
+import './index.css';
 
 function Button({
     buttonOnClick,
-    buttonText,
-    className
+    children,
+    className,
+    type
 }) {
     return (
         <button
             onClick={buttonOnClick}
-            className={className}>
-            {buttonText}
+            className={className}
+            type={type}>
+            {children}
         </button>
     );
 }

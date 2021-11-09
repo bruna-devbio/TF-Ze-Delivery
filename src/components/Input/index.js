@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 const Input = ({
     placeholder,
@@ -6,10 +7,10 @@ const Input = ({
     onChange,
     value,
     name,
-    type }) => {
+    type
+}) => {
     return (
-        <input
-            type={type}
+        <input type={type}
             placeholder={placeholder}
             className={className}
             name={name}

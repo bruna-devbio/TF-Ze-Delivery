@@ -33,7 +33,7 @@
     .login-button {
         margin: 0.6rem 1rem;
         color: #fff;
-        background-color: #363739;
+        background-color: var(--cinza);
         font-weight: bold;
     }
 

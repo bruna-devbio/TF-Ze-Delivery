@@ -15,3 +15,12 @@ export const loginPage = (email, password) => {
     .auth()
     .signInWithEmailAndPassword(email, password);
 };
+
+export const registerPage = (email, password) => {
+  if (firebase.auth().currentUser) {
+    firebase.auth().signOut();
+  }
+  return firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password);
+};

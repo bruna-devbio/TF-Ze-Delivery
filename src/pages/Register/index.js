@@ -5,6 +5,7 @@ import Input from "../../components/Input";
 import logoPreto from "../../assets/img/LogoPreto.png";
 import nomePreto from "../../assets/img/NomePreto.png";
 import logoMobile from "../../assets/img/LogoMobile.png";
+import { registerPage } from '../../services/index';
 import './index.css';
 import './responsive.css';
 
@@ -13,6 +14,8 @@ const Register = () => {
 	const [values, setValues] = useState({
 		email: '',
 		password: '',
+		data: '',
+		cpf: '',
 
 	});
 
@@ -20,6 +23,15 @@ const Register = () => {
 		setValues({
 			...values,
 			[event.target.name]: event.target.value
+		})
+	};
+
+	const handleClick = (event) => {
+		event.preventDefault()
+		registerPage(values.email, values.password).then(() => {
+			alert("cadastrado")
+		}).catch(() => {
+			alert('erro')
 		})
 	};
 
@@ -85,6 +97,7 @@ const Register = () => {
 						<Button
 							type='button'
 							className='register-button'
+							buttonOnClick={handleClick}
 						>CADASTRAR</Button>
 					</form>
 				</fieldset>

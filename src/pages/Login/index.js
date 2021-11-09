@@ -25,8 +25,9 @@ const Login = () => {
 	};
 
 	const handleClick = (event) => {
+		event.preventDefault()
 		loginPage(values.email, values.password).then(() => {
-			alert("entrouuuu")
+			alert('login funcionando')
 		}).catch(() => {
 			alert('erro')
 		})

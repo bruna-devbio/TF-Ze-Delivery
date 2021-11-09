@@ -1,7 +1,7 @@
 @media(max-width: 930px) {
 
     .register-container {
-        background-color: #FFC629;
+        background-color: var(--amarelo);
     }
 
     .register-logo {
@@ -47,7 +47,7 @@
     }
 
     .register-back-login-mobile:hover {
-        color: #FFC629;
+        color: var(--amarelo);
         text-decoration: underline;
         transition: all ease 0.8s;
     }

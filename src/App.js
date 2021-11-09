@@ -5,8 +5,6 @@ import Home from './pages/Home'
 import Register from './pages/Register'
 import Cart from './pages/Cart';
 import Vouchers from './pages/Vouchers'
-
-
 import './App.css';
 
 function App() {

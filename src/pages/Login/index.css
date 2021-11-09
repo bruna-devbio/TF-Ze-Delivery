@@ -1,10 +1,11 @@
 .login-container {
     display: flex;
-    background-color: --amarelo;
+    background-color: var(--amarelo);
+
 }
 
 .login-logo {
-    background-color: --cinza;
+    background-color: var(--cinza);
     width: 50%;
     height: 100vh;
 }
@@ -56,12 +57,12 @@
 .login-button {
     margin: 1rem 0.3rem;
     color: #fff;
-    background-color: --cinza;
+    background-color: var(--cinza);
     font-weight: bold;
 }
 
 .login-button:hover {
-    background-color: --amarelo;
+    background-color: var(--amarelo);
     transition: all ease 0.6s;
 }
 
@@ -71,19 +72,19 @@
 }
 
 .login-p {
-    border-top: 1px solid rgba(0, 0, 0, 0.11);
+    border-top: 1px solid #0000001c;
     margin: 0.2rem 0.2rem 0.2rem;
     padding: 0.8rem 0rem 0rem;
     font-size: 0.9rem;
 }
 
 .login-register {
-    color: --amarelo;
+    color: var(--amarelo);
     text-decoration: none;
 }
 
 .login-register:hover {
-    color: --cinza;
+    color: var(--cinza);
     transition: all ease 0.8s;
     text-decoration: underline;
 }
@@ -101,14 +102,14 @@
 .login-button-google {
     margin: 0rem 0.3rem;
     color: #fff;
-    background-color: --amarelo;
+    background-color: var(--amarelo);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .login-button-google:hover {
-    background-color: --cinza;
+    background-color: var(--cinza);
     transition: all ease 0.6s;
 }
 
