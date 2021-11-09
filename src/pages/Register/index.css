@@ -1,0 +1,110 @@
+.register-container {
+    display: flex;
+    background-color: #363739;
+}
+
+.register-form-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+.register-H1 {
+    margin: 1rem 0rem;
+    font-size: 2rem;
+    color: #FFC629;
+}
+
+.register-H1-mobile {
+    display: none;
+}
+
+.register-fieldset {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    width: 20rem;
+    padding: 2rem 0rem;
+    border: none;
+    margin: 0rem 0rem 1rem;
+}
+
+.register-input {
+    width: 15rem;
+}
+
+.register-button {
+    margin: 1rem 0.3rem 0rem;
+    color: #fff;
+    background-color: #FFC629;
+    font-weight: bold;
+}
+
+.register-button:hover {
+    background-color: #363739;
+    transition: all ease 0.6s;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-p {
+    border-top: 1px solid rgba(0, 0, 0, 0.11);
+    margin: 0.2rem 0.2rem 0.2rem;
+    padding: 0.8rem 0rem 0rem;
+    font-size: 0.9rem;
+}
+
+.register-back-login {
+    color: white;
+    position: absolute;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.register-back-login-mobile {
+    display: none;
+}
+
+.register-back-login:hover {
+    color: #FFC629;
+    text-decoration: underline;
+    transition: all ease 0.5s;
+}
+
+.register-logo {
+    background-color: #FFC629;
+    width: 50%;
+    height: 100vh;
+}
+
+.register-div-logo1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20rem 0rem 0rem 8rem;
+}
+
+.register-logo-black {
+    width: 18rem;
+    position: absolute;
+}
+
+.register-div-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5rem 0rem 0rem 0rem;
+}
+
+.register-name-black {
+    width: 32rem;
+}

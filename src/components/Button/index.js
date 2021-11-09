@@ -1,12 +1,14 @@
 import React from 'react';
 
-function Button ({
+function Button({
     buttonOnClick,
     buttonText,
     className
-}){
-    return(
-        <button onClick={buttonOnClick} className={className}>
+}) {
+    return (
+        <button
+            onClick={buttonOnClick}
+            className={className}>
             {buttonText}
         </button>
     );

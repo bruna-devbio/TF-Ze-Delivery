@@ -1,5 +1,5 @@
 import React from 'react';
-import InputMasked from './InputMask.js';
+import InputMasked from '../InputMask';
 import { useState } from 'react';
 
 const initialValues = {
