@@ -8,7 +8,7 @@ import "./responsive.css";
 const BuyVouchers = () => {
 
     const [values, setValues] = useState({
-        voucher: ''
+        voucher: '',
     });
 
     const onChangeValues = (event) => {
@@ -30,7 +30,8 @@ const BuyVouchers = () => {
                         name="voucher"
                         onChange={onChangeValues}
                         value={values.voucher}
-                    ></Input>
+                    >
+                    </Input>
                 </div>
                 <div className="voucher-div-img">
                     <img

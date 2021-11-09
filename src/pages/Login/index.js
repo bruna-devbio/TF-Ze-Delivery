@@ -44,7 +44,7 @@ const Login = () => {
 	const loginGoogle = (event) => {
 		event.preventDefault()
 		signInGoogleAccount().then(() => {
-			alert('entrou')
+			navigate('/home')
 		}).catch(() => {
 			alert('erro')
 		})
@@ -77,8 +77,8 @@ const Login = () => {
 							value={values.email}
 						>
 						</Input>
-					 {errors.email && <ValidationMessage>{errors.email}</ValidationMessage>}
-              
+						{errors.email && <ValidationMessage>{errors.email}</ValidationMessage>}
+
 						<Input
 							type='password'
 							placeholder='Digite sua senha'
@@ -87,8 +87,8 @@ const Login = () => {
 							onChange={onChangeValues}
 							value={values.password}>
 						</Input>
-					{errors.password && <ValidationMessage>{errors.password}</ValidationMessage>}
-            
+						{errors.password && <ValidationMessage>{errors.password}</ValidationMessage>}
+
 
 						<Button
 							type='button'
