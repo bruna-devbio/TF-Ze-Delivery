@@ -2,20 +2,31 @@ import { React, useState } from "react"
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+import {registerPage} from '../../services/index';
 
 const Register = () => {
 
   const [values, setValues] = useState({
     email: '',
     password: '',
+		data: '',
+		cpf: '',
 
   })
-	console.log(values);
 
 	const onChangeValues = (event) => {
 		setValues({
 			...values,
 			[event.target.name]: event.target.value
+		})
+	}
+
+	const handleClick = (event) => {
+		event.preventDefault()
+		registerPage(values.email, values.password).then(() => {
+			alert("entrouuuu")
+		}).catch(() => {
+			alert('erro')
 		})
 	}
 	
@@ -80,9 +91,10 @@ const Register = () => {
 					type='submit'
 					buttonText='CADASTRAR-SE'
 					className='button'
+					buttonOnClick={handleClick}
           />
 
-				<p className='go-to'>Já tem uma conta?<Link to='./Login/index.js'>
+         <p className='go-to'>Já tem uma conta? <Link to='/login'>
 					Faça seu login aqui
 				</Link></p>
 			</form>
@@ -92,3 +104,4 @@ const Register = () => {
 
 
 export default Register;
+

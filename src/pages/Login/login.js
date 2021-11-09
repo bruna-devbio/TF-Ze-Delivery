@@ -6,7 +6,6 @@ import { loginPage } from "../../services/index";
 
 
 const Login = () => {
-
 	const [values, setValues] = useState({
 		email: '',
 		password: '',
@@ -22,8 +21,9 @@ const Login = () => {
 	}
 
 	const handleClick = (event) => {
+		event.preventDefault()
 		loginPage(values.email, values.password).then(() => {
-			alert("entrouuuu")
+      alert('entrouuuu')
 		}).catch(() => {
 			alert('erro')
 		})
