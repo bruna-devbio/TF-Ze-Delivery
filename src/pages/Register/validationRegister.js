@@ -30,8 +30,6 @@ function ValidateInputs(values) {
         errors.cpf = "Por favor preencha seu CPF"
         errors.empty = false
     }
-
-
     return errors;
 }
 

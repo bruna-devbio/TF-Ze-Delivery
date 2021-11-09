@@ -22,7 +22,6 @@ const Register = () => {
 		password: '',
 		cpf: '',
 		age: '',
-
 	});
 
 	const onChangeValues = (event) => {
