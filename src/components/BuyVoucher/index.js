@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import Input from "../Input";
 import imgVoucher from "../../assets/img/imgVoucher.png";
 import Button from "../Button";
@@ -8,14 +8,14 @@ import "./responsive.css";
 const BuyVouchers = () => {
 
     const [values, setValues] = useState({
-        voucher: '',
+        voucher: ''
     });
 
     const onChangeValues = (event) => {
         setValues({
             ...values,
-            [event.target.voucher]: event.target.value
-        })
+            [event.target.name]: event.target.value
+        });
     };
 
     return (
@@ -24,10 +24,10 @@ const BuyVouchers = () => {
                 <div className="voucher-div-input">
                     <label className="voucher-label">R$</label>
                     <Input
-                        type="text"
-                        placeholder="Valor do Voucher"
-                        className="voucher-input"
-                        name="voucher"
+                        type='number'
+                        placeholder='Valor do Voucher'
+                        className='voucher-input'
+                        name='voucher'
                         onChange={onChangeValues}
                         value={values.voucher}
                     >
@@ -54,7 +54,7 @@ const BuyVouchers = () => {
                     >CONTINUAR</Button>
                 </div>
             </section>
-        </main>
+        </main >
     );
 };
 
