@@ -58,7 +58,6 @@ const Register = () => {
 						<label className='register-label'>Nome</label>
 						<Input
 							type='name'
-							placeholder='Digite seu nome'
 							className='register-input'
 							name='nome'
 							onChange={onChangeValues}
