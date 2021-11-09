@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -14,3 +15,20 @@ export const loginPage = (email, password) => {
     .auth()
     .signInWithEmailAndPassword(email, password);
 }; 
+
+export const registerPage = (email, password) => {
+  if (firebase.auth().currentUser) {
+    firebase.auth().signOut();
+  }
+  return firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password);
+};
+
+export const signInGoogleAccount = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  return firebase
+    .auth()
+    .signInWithPopup(provider);
+};
