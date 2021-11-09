@@ -1,10 +1,10 @@
 import React from "react";
 import './index.css';
 
-const Vouchers = () => {
+const SeeVoucher = () => {
   return (
     <div>CONSULTA VOUCHERS</div>
   )
 }
 
-export default Vouchers;
+export default SeeVoucher;

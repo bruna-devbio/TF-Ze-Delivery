@@ -4,7 +4,7 @@ import './responsive.css';
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
-import Vouchers from "../../components/Vouchers";
+import SeeVoucher from "../../components/SeeVoucher";
 import BuyVouchers from "../../components/BuyVoucher";
 
 const Dashboard = () => {
@@ -18,7 +18,7 @@ const Dashboard = () => {
             <Header show={showVouchers} buy={buyVouchers}></Header>
             <Navbar show={showVouchers} buy={buyVouchers} setShow={setShowVouchers} setBuy={setBuyVouchers}></Navbar>
             <div className='dashboard-div'>
-                {showVouchers && <Vouchers />}
+                {showVouchers && <SeeVoucher />}
                 {buyVouchers && <BuyVouchers />}
             </div>
         </section>
