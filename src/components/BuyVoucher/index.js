@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Input from "../Input";
 import imgVoucher from "../../assets/img/imgVoucher.png";
 import Button from "../Button";
@@ -9,7 +8,7 @@ import "./responsive.css";
 const BuyVouchers = () => {
 
     const [values, setValues] = useState({
-        voucher: '',
+        voucher: ''
     });
 
     const onChangeValues = (event) => {
@@ -18,9 +17,6 @@ const BuyVouchers = () => {
             [event.target.voucher]: event.target.value
         })
     };
-
-    const navigateVoucher = useNavigate()
-    navigateVoucher("/Voucher");
 
     return (
         <main>
@@ -54,7 +50,6 @@ const BuyVouchers = () => {
                     <Button
                         type="submit"
                         className="voucher-button"
-                        buttonOnClick={navigateVoucher}
                     >CONTINUAR</Button>
                 </div>
             </section>
