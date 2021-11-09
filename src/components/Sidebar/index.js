@@ -7,6 +7,8 @@ import logoPreto from '../../assets/img/LogoPreto.png';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const Sidebar = ({
+    show,
+    buy,
     setShow,
     setBuy,
 }) => {
@@ -17,18 +19,18 @@ const Sidebar = ({
                     fontSize: '2.5rem'
                 }} />
             </div>
-            <div className='sidebar-buy-vouchers' onClick={() => setBuy(true, setShow(false))}>
+            <div className={`sidebar-buy-vouchers ${buy && 'active'}`} onClick={() => setBuy(true, setShow(false))}>
                 <ShoppingCartIcon />
                 <p className='sidebar-p'>COMPRAR VOUCHERS</p>
             </div>
-            <div className='sidebar-see-vouchers' onClick={() => setShow(true, setBuy(false))}>
+            <div className={`sidebar-see-vouchers ${show && 'active'}`} onClick={() => setShow(true, setBuy(false))}>
                 <InventoryIcon />
                 <p className='sidebar-p'>CONSULTAR VOUCHERS</p>
             </div>
             <div className='sidebar-user'>
                 <img className='sidebar-img-user' src={logoPreto} alt='logo-user' />
             </div>
-        </div>
+        </div >
     )
 }
 

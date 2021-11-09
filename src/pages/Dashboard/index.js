@@ -14,9 +14,9 @@ const Dashboard = () => {
 
     return (
         <section className='dashboard-container'>
-            <Sidebar setShow={setShowVouchers} setBuy={setBuyVouchers}></Sidebar>
+            <Sidebar show={showVouchers} buy={buyVouchers} setShow={setShowVouchers} setBuy={setBuyVouchers}></Sidebar>
             <Header show={showVouchers} buy={buyVouchers}></Header>
-            <Navbar setShow={setShowVouchers} setBuy={setBuyVouchers}></Navbar>
+            <Navbar show={showVouchers} buy={buyVouchers} setShow={setShowVouchers} setBuy={setBuyVouchers}></Navbar>
             <div className='dashboard-div'>
                 {showVouchers && <Vouchers />}
                 {buyVouchers && <BuyVouchers />}
