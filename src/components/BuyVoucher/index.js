@@ -57,7 +57,7 @@ const BuyVouchers = ({
             array.push(obj)
         })
         createVoucher(array)
-
+        setPayVouchers(true, hidden(false));
     }
 
 

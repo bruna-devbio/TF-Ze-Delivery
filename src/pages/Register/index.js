@@ -41,10 +41,10 @@ const Register = () => {
 				localStorage.setItem('name', values.name)
 				navigate('/login')
 			}).catch(() => {
-				alert("erro")
+
 			})
 		}).catch(() => {
-			alert("erro")
+
 		})
 	};
 
