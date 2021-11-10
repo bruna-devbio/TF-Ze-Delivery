@@ -57,7 +57,7 @@ export const getName = (name) => {
 
 export const createVoucher = (voucher) => {
   const item = { voucher }
-  firebase
+  return firebase
     .firestore()
     .collection('vouchers')
     .add(item);
