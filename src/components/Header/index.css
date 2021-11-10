@@ -44,7 +44,7 @@
 .header-icon {
     display: flex;
     justify-content: flex-end;
-    width: 0%;
+    width: 10%;
 }
 
 .header-logout-icon {
@@ -54,4 +54,8 @@
 .header-logout-icon:hover {
     color: var(--cinza);
     transition: all ease 0.8s;
+}
+
+.header-back {
+    display: flex;
 }

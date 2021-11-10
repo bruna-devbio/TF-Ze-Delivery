@@ -1,0 +1,40 @@
+@media(max-width: 930px) {
+
+    .payment-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .payment-h1 {
+        font-size: 1rem;
+        padding: 1.5rem 0rem 0rem;
+    }
+
+    .payment-options {
+        width: 80vw;
+    }
+
+    .payment-card {
+        padding: 0rem 0rem 0rem 0.8rem;
+        width: auto;
+    }
+
+    .payment-h2 {
+        font-size: 1.2rem;
+    }
+
+    .payment-text-card,
+    .payment-text {
+        font-size: 0.9rem;
+        width: auto
+    }
+
+    .payment-btn {
+        font-size: 1rem;
+        width: 80vw;
+    }
+
+
+}

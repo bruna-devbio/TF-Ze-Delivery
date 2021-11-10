@@ -1,24 +1,16 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 
-
-const InputMasked = ({type, placeholder, value, onChange, name, mask }) => {
-
-  /*const onlyNumbers = (str) => str.replace(/[^0-9]/g, '');
-  
-
-  function handleChange(e) {
-    onChange({
-      ...e,
-      target: {
-        ...e.target,
-        name,
-        value: onlyNumbers(e.target.value)
-      }
-    });
-  }*/
-
-  // tela cadastro
+const InputMasked = ({
+  type,
+  placeholder,
+  value,
+  onChange,
+  name,
+  mask,
+  className,
+  key
+}) => {
   return (
     <InputMask
       name={name}
@@ -27,9 +19,10 @@ const InputMasked = ({type, placeholder, value, onChange, name, mask }) => {
       mask={mask}
       value={value}
       onChange={onChange}
+      className={className}
+      key={key}
     />
   );
-  // 
 };
 
 export default InputMasked;
