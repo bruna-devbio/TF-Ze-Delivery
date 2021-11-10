@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router";
+import { logout } from "../../services";
 import './index.css';
 import './responsive.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -13,12 +15,19 @@ const Sidebar = ({
     setBuy,
     pay
 }) => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/')
+        logout()
+    }
     return (
         <div className='sidebar-container'>
             <div className='sidebar-icon'>
-                <LogoutIcon className={`sidebar-logout-icon ${pay ? 'disable' : ''}`} style={{
-                    fontSize: '2.5rem'
-                }} />
+                <LogoutIcon className={`sidebar-logout-icon ${pay ? 'disable' : ''}`}
+                    onClick={() => handleClick()}
+                    style={{
+                        fontSize: '2.5rem'
+                    }} />
             </div>
             <div className={`sidebar-buy-vouchers ${buy ? 'active' : pay ? 'disable' : ''}`} onClick={() => setBuy(true, setShow(false))}>
                 <ShoppingCartIcon />

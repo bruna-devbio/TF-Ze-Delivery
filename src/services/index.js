@@ -14,7 +14,7 @@ export const loginPage = (email, password) => {
   return firebase
     .auth()
     .signInWithEmailAndPassword(email, password);
-};
+}; 
 
 export const registerPage = (email, password) => {
   if (firebase.auth().currentUser) {
@@ -32,3 +32,23 @@ export const signInGoogleAccount = () => {
     .auth()
     .signInWithPopup(provider);
 };
+
+export const logout = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log('foi');
+    }).catch(() => {
+			alert('erro')
+		})
+};
+
+export const addUsers = (userId) => firebase
+  .firestore()
+  .collection('users')
+  .add(userId).then(() => {
+    console.log('foi');
+  }).catch(() => {
+    alert('erro adicionar')
+  });

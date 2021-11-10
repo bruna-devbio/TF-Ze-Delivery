@@ -1,16 +1,18 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 
+
 const InputMasked = ({
-  type,
-  placeholder,
   value,
   onChange,
   name,
   mask,
   className,
-  key
+  key,
+  type,
+  placeholder,
 }) => {
+
   return (
     <InputMask
       name={name}
