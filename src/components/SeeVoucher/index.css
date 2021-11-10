@@ -1,0 +1,45 @@
+.seevoucher-main {
+    display: flex;
+    margin-top: 0rem;
+    align-items: center;
+    background-color: #fff;
+    width: 24rem;
+    margin: 1rem 2rem;
+    padding: 1rem;
+    border-radius: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 0 1em #00000025;
+    overflow-y: scroll;
+    max-height: 12rem;
+    justify-content: space-between;
+}
+
+.seevoucher-item {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    text-align: start;
+    padding: 1rem 0rem 1rem;
+    margin: 0.2rem 1rem;
+}
+
+.voucher-info {
+    display: flex;
+}
+
+.voucher-detail {}
+
+.select-options {
+    text-align: center;
+    width: 8rem;
+}
+
+.seevoucher-main::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.seevoucher-main::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+}

@@ -47,19 +47,25 @@ const BuyVouchers = ({
 
     const createVouchers = () => {
         const id = localStorage.getItem('uid')
-        const array = []
+        const vouchers = []
         values.forEach((item) => {
             const obj = {
                 price: item.voucher,
                 qtd: item.qtd,
-                userId: id
-            }
-            array.push(obj)
-        })
-        createVoucher(array)
-        setPayVouchers(true, hidden(false));
-    }
 
+            }
+            vouchers.push(obj)
+        })
+        const docObj = {
+            userId: id,
+            vouchers: vouchers,
+        }
+
+        createVoucher(docObj)
+            .then(() => {
+                setPayVouchers(true, hidden(false))
+            })
+    }
 
     return (
         <section className="voucher-container">
@@ -128,6 +134,7 @@ const BuyVouchers = ({
             </Orders>
         </section >
     );
+    
 };
 
 export default BuyVouchers;

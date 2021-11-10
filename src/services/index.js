@@ -56,9 +56,13 @@ export const getName = (name) => {
 }
 
 export const createVoucher = (voucher) => {
-  const item = {voucher}
+  const item = { voucher }
   firebase
-  .firestore()
-  .collection('vouchers')
-  .add(item);
+    .firestore()
+    .collection('vouchers')
+    .add(item);
+}
+export const getVoucher = () => {
+  const getVoucher = firebase.firestore().collection('vouchers')
+  return getVoucher.get()
 }
