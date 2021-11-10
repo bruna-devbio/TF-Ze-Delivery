@@ -20,7 +20,6 @@ const BuyVouchers = ({
         qtd: 1,
     }]);
 
-
     const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
@@ -70,6 +69,7 @@ const BuyVouchers = ({
                         <label className="voucher-label">R$</label>
                         <Input
                             type='number'
+                            min='150'
                             placeholder='Valor do Voucher'
                             className='voucher-input'
                             name='voucher'
