@@ -1,12 +1,13 @@
 import React from 'react';
-import Cards from 'react-credit-cards';
-import Input from '../../components/Input/Input';
+import Cards from 'elt-react-credit-cards';
+import Input from '../Input';
 import { useState } from 'react';
+
 
 const CardMask = () => {
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
-  const [cvv, setCvv] = useState('');
+  const [cvc, setCvc] = useState('');
   const [expiry, setExpiry] = useState('');
   const [focus, setFocus] = useState('');
 
@@ -15,13 +16,16 @@ const CardMask = () => {
       <Cards 
         number={number}
         name={name}
-        cvv={cvv}
+        cvc={cvc}
         expiry={expiry}
         focused={focus}
       />
-      <Input
+
+      <form>
+       <Input
         type="tel"
         name="number"
+        mask="9999.9999.9999.9999"
         placeholder="Card Number"
         value={number}
         onChange={e => setNumber(e.target.value)}
@@ -45,12 +49,13 @@ const CardMask = () => {
       />
       <Input
         type="tel"
-        name="expiry"
-        placeholder="CVV"
-        value={cvv}
-        onChange={e => setCvv(e.target.value)}
+        name="cvc"
+        placeholder="CVC"
+        value={cvc}
+        onChange={e => setCvc(e.target.value)}
         onFocus={e => setFocus(e.target.name)}
       />
+      </form>
     </>
   )
 }
