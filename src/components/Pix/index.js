@@ -2,7 +2,7 @@ import React from 'react';
 import QRCode from 'react-google-qrcode';
 
 const PixQRCode = ({ text }) => {
- 
+
   return (
     <div>
       <QRCode
@@ -11,8 +11,7 @@ const PixQRCode = ({ text }) => {
         framed
       />
     </div>
-);
-
+  );
 }
 
 export default PixQRCode;
