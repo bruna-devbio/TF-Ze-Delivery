@@ -39,9 +39,23 @@ export const logout = () => {
     .signOut()
 };
 
+export const addUsers = (userId) => firebase
+  .firestore()
+  .collection('users')
+  .add(userId).then(() => {
+    console.log('foi');
+  }).catch(() => {
+    alert('erro adicionar')
+  });
+
 export const getName = (name) => {
   const auth = getAuth();
   return updateProfile(auth.currentUser, {
     displayName: name,
   })
 }
+
+export const addVoucher = (voucher) => firebase
+  .firestore()
+  .collection('vouchers')
+  .add(voucher);
