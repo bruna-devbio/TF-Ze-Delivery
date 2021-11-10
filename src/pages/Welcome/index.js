@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Button from "../../components/Button";
+import PixQRCode from '../../components/Pix'
 import mariaVoucherHome from "../../assets/img/LogoMobile.png";
 import "./index.css";
 import "./responsive.css";
 
 const Welcome = () => {
+  const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
-  navigate('/Login')
 
   return (
     <main className="home-container">
@@ -38,6 +39,26 @@ const Welcome = () => {
           buttonOnClick={navigate}>
           CONTINUAR
         </Button>
+
+        <Button
+          buttonOnClick={() => setShow((prev) => !prev)}
+          type="button"
+        >
+          PAGAMENTO
+        </Button >
+
+        { 
+           show ?
+           ( 
+              <PixQRCode
+                text='https://www.google.com'
+              />
+            ) 
+            : 
+            setTimeout(() => setShow(false), 5000)
+        }
+        
+       
       </div>
     </main>
   )
