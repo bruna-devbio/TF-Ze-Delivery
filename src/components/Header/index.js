@@ -16,8 +16,11 @@ const Header = ({
 }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    logout()
-    navigate('/login')
+    logout().then(() => {
+      localStorage.removeItem('uid');
+      localStorage.removeItem('name');
+      navigate('/login')
+    })
   }
   return (
     <header>
@@ -27,7 +30,7 @@ const Header = ({
           <div className='header-user'>
             <img className='header-img-user' src={logoPreto} alt='logo-user' />
           </div>
-          <div className='header-icon'>
+          <div className={`header-icon ${pay && 'active'}`}>
             <LogoutIcon
               onClick={() => handleClick()}
               className='header-logout-icon'

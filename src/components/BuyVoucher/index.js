@@ -21,19 +21,19 @@ const BuyVouchers = ({
 
     const [totalPrice, setTotalPrice] = useState(0)
 
-    useEffect(()=> {
+    useEffect(() => {
         let price = values.reduce((acc, item) => acc + item.voucher * item.qtd, 0)
         setTotalPrice(price)
-    },[values])
-        
+    }, [values])
+
 
     const handleChange = (i, e) => {
         console.log(e.target.value)
         console.log(e.target.name)
         let value = [...values];
         value[i][e.target.name] = Number(e.target.value);
-        setValues(value); 
-               
+        setValues(value);
+
     }
 
     const addVoucher = () => {
@@ -45,8 +45,6 @@ const BuyVouchers = ({
         setValues([...values])
     }
 
-    
-
     return (
         <section className="voucher-container">
             <h1 className='voucher-h1'>Digite o valor e a quantidade de vouchers</h1>
@@ -54,7 +52,7 @@ const BuyVouchers = ({
                 {values.map((element, index) => (
                     <div className="voucher-div-input" key={index}>
                         <label className="voucher-label">R$</label>
-                        <InputMasked                                                
+                        <InputMasked
                             type='number'
                             placeholder='Valor do Voucher'
                             className='voucher-input'

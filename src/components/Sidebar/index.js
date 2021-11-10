@@ -17,8 +17,11 @@ const Sidebar = ({
 }) => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/login')
-        logout()
+        logout().then(() => {
+            localStorage.removeItem('uid');
+            localStorage.removeItem('name');
+            navigate('/login')
+        })
     }
     return (
         <div className='sidebar-container'>

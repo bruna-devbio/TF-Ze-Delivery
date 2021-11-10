@@ -5,7 +5,7 @@ import Input from "../../components/Input";
 import logoPreto from "../../assets/img/LogoPreto.png";
 import nomePreto from "../../assets/img/NomePreto.png";
 import logoMobile from "../../assets/img/LogoMobile.png";
-import { registerPage } from '../../services/index';
+import { registerPage, getName } from '../../services/index';
 import ValidateInputs from "./validationRegister";
 import ValidationMessage from "../../components/Validation/ValidationMessage";
 import InputMasked from "../../components/InputMask";
@@ -34,13 +34,19 @@ const Register = () => {
 	const handleClick = (event) => {
 		event.preventDefault()
 		setError(ValidateInputs(values))
-		registerPage(values.email, values.password).then(() => {
-			navigate('/login')
+		registerPage(values.email, values.password).then((resp) => {
+			getName(values.name).then(() => {
+				const user = resp.user.uid
+				localStorage.setItem('uid', user)
+				localStorage.setItem('name', values.name)
+				navigate('/login')
+			}).catch(() => {
+				alert("erro")
+			})
 		}).catch(() => {
+			alert("erro")
 		})
 	};
-	const id = localStorage.getItem('uid')
-	console.log(id);
 
 	return (
 		<section className='register-container'>
