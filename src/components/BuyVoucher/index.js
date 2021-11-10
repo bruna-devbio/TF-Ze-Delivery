@@ -19,6 +19,7 @@ const BuyVouchers = ({
         qtd: 1,
     }]);
 
+
     const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(()=> {
@@ -27,9 +28,7 @@ const BuyVouchers = ({
     },[values])
         
 
-    const handleChange = (i, e) => {
-        console.log(e.target.value)
-        console.log(e.target.name)
+    const handleChange = (i, e) => {        
         let value = [...values];
         value[i][e.target.name] = Number(e.target.value);
         setValues(value); 
@@ -45,6 +44,20 @@ const BuyVouchers = ({
         setValues([...values])
     }
 
+    const createVouchers = () => {
+        const id = localStorage.getItem('uid')
+        const array = []
+        values.forEach((item) => {
+           const obj = {
+                price: item.voucher,
+                qtd: item.qtd
+            }
+            array.push(obj)
+        })
+        console.log(array)      
+
+        setPayVouchers(true, hidden(false))
+    }
     
 
     return (
@@ -109,7 +122,7 @@ const BuyVouchers = ({
                         <p className="orders-p-qtd">Total a pagar</p>
                         <p className="orders-p-voucher">{formatCurrency(totalPrice)}</p>
                     </div>
-                    <Button className='orders-btn' buttonOnClick={() => setPayVouchers(true, hidden(false))}>IR PARA O PAGAMENTO</Button>
+                    <Button className='orders-btn' buttonOnClick={createVouchers}>IR PARA O PAGAMENTO</Button>
                 </div>
             </Orders>
         </section >

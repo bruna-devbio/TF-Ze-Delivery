@@ -51,3 +51,8 @@ export const addUsers = (userId) => firebase
   }).catch(() => {
     alert('erro adicionar')
   });
+
+export const addVoucher = (voucher) => firebase
+  .firestore()
+  .collection('vouchers')
+  .add(voucher);
