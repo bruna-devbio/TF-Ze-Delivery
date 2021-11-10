@@ -1,7 +1,6 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 
-
 const InputMasked = ({
   value,
   onChange,
@@ -21,6 +20,7 @@ const InputMasked = ({
       value={value}
       onChange={onChange}
       className={className}
+      required
     />
   );
 };

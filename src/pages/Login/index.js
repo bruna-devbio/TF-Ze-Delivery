@@ -36,7 +36,7 @@ const Login = () => {
 			localStorage.setItem('uid', user)
 			navigate('/home')
 		}).catch(() => {
-			alert('erro')
+
 		})
 	};
 
@@ -47,7 +47,7 @@ const Login = () => {
 			localStorage.setItem('uid', user)
 			navigate('/home')
 		}).catch(() => {
-			alert('erro')
+
 		})
 	};
 

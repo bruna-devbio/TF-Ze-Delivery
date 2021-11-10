@@ -43,7 +43,7 @@ const Dashboard = () => {
             <div className='dashboard-div'>
                 {showVouchers && <SeeVoucher />}
                 {buyVouchers && <BuyVouchers setPayVouchers={setPayVouchers} hidden={setBuyVouchers} />}
-                {payVouchers && <PayVoucher />}
+                {payVouchers && <PayVoucher pay={payVouchers} setPay={setPayVouchers} show={setBuyVouchers} showVouchers={setShowVouchers} />}
             </div>
         </section>
     )

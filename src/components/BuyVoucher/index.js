@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import InputMasked from "../InputMask";
+import Input from "../Input";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import Orders from "../Orders";
@@ -16,10 +16,9 @@ const BuyVouchers = ({
 
     const [noOrders, setNoOrders] = useState(true);
     const [values, setValues] = useState([{
-        voucher: 0,
+        voucher: '',
         qtd: 1,
     }]);
-                                            
 
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -29,7 +28,7 @@ const BuyVouchers = ({
     }, [values])
 
 
-    const handleChange = (i, e) => {        
+    const handleChange = (i, e) => {
         let value = [...values];
         value[i][e.target.name] = Number(e.target.value);
         setValues(value);
@@ -38,6 +37,7 @@ const BuyVouchers = ({
 
     const addVoucher = () => {
         setValues([...values, { voucher: '', qtd: 1 }]);
+        setNoOrders(false)
     }
 
     const removeVoucher = (element) => {
@@ -47,19 +47,25 @@ const BuyVouchers = ({
 
     const createVouchers = () => {
         const id = localStorage.getItem('uid')
-        const array = []
+        const vouchers = []
         values.forEach((item) => {
-           const obj = {
+            const obj = {
                 price: item.voucher,
                 qtd: item.qtd,
-                userId: id
+
             }
-            array.push(obj)
+            vouchers.push(obj)
         })
-        createVoucher(array)
-       
+        const docObj = {
+            userId: id,
+            vouchers: vouchers,
+        }
+
+        createVoucher(docObj)
+            .then(() => {
+                setPayVouchers(true, hidden(false))
+            })
     }
-    
 
     return (
         <section className="voucher-container">
@@ -68,15 +74,16 @@ const BuyVouchers = ({
                 {values.map((element, index) => (
                     <div className="voucher-div-input" key={index}>
                         <label className="voucher-label">R$</label>
-                        <InputMasked
+                        <Input
                             type='number'
+                            min='150'
                             placeholder='Valor do Voucher'
                             className='voucher-input'
                             name='voucher'
                             onChange={(e) => handleChange(index, e)}
                             value={element.voucher}
                         >
-                        </InputMasked>
+                        </Input>
                         <div className="voucher-amount-order">
                             <Button className="voucher-less-item" buttonOnClick={() => {
                                 values.map((item, i) => {
@@ -96,7 +103,6 @@ const BuyVouchers = ({
                                     if (item.qtd >= 0 && (element === item)) {
                                         values[i].qtd++
                                         setValues([...values])
-                                        setNoOrders(false)
                                     }
                                     return item;
                                 })
@@ -128,6 +134,7 @@ const BuyVouchers = ({
             </Orders>
         </section >
     );
+    
 };
 
 export default BuyVouchers;
