@@ -1,14 +1,14 @@
 import React from "react";
 import './index.css';
-import CardMask from '../Card';
+import CardMask from '../CardMask';
 
 const SeeVoucher = () => {
   return (
-  
-    <div>  
+
+    <div>
       <CardMask />
     </div>
-  
+
   )
 }
 

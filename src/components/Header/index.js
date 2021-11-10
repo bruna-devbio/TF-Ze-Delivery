@@ -17,7 +17,7 @@ const Header = ({
   const navigate = useNavigate();
   const handleClick = () => {
     logout()
-    navigate('/')
+    navigate('/login')
   }
   return (
     <header>

@@ -17,7 +17,7 @@ const Sidebar = ({
 }) => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/')
+        navigate('/login')
         logout()
     }
     return (
