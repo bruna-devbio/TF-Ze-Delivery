@@ -1,0 +1,55 @@
+.voucher-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.voucher-div-input {
+    text-align: center;
+    margin-top: 2rem;
+
+}
+
+.voucher-label {
+    font-weight: bold;
+}
+
+.voucher-input {
+    text-align: center;
+}
+
+.voucher-div-img {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.voucher-text {
+    text-align: center;
+    margin: 0.2rem;
+}
+
+.voucher-title {
+    padding: 2rem;
+}
+
+.voucher-button {
+    margin: 2rem 0.3rem;
+    color: #fff;
+    background-color: var(--amarelo);
+    justify-content: center;
+    align-items: center;
+}
+
+.voucher-button:hover {
+    background-color: var(--cinza);
+    transition: all ease 0.6s;
+}
+
+.voucher-div-button {
+    text-align: center;
+    justify-content: center;
+}

@@ -1,70 +1,202 @@
-# Getting Started with Create React App
+# <Maria Voucher>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Talent Fest - Hackaton realizado realizado no bootcamp SAP006 da [Laboratória](https://www.laboratoria.la/br) em parceria com [Zé Delivery](https://www.ze.delivery/)
 
-## Available Scripts
+## Índice
 
-In the project directory, you can run:
+1. [Definição do Produto](#dart-definição-do-produto)
+2. [Histórias de Usuários](#pencil2-histórias-de-usuários)
+3. [Protótipos](#art-protótipos)
+4. [Como Utilizar](#gear-como-utilizar)
+5. [Tecnologias Utilizadas](#robot-tecnologias-utilizadas)
+6. [Sobre as desenvolvedoras](#woman_technologist-sobre-as-desenvolvedoras)
 
-### `npm start`
+---
+## 💻 Definição do Produto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Seja bem-vinde! Somos a [Maria Voucher](https://tf-ze-delivery.web.app/)
+Saudades de um Happy Hour né minha filha?
+Compre com Maria Voucher os melhores cupons, para seus funcionários sextar de forma segura e com qualidade.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+<div style="display: flex">
+  <img alt="logo" height="200" width="200" src="./src/img/logo.svg">
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+<div>
+ 
+  <h4> Você pode acessar a aplicação utilizando um dos logins de teste abaixo:</h4>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| #                     	|             Informações            	|                   	|
+|:-----------------------:|:----------------------------:	|:---------------------------:	|
+| 🆔	| teste-maria@gmail.com 	| 
+| key                 	|            123456            	|
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+## 📃 Histórias de Usuários
 
-### `npm run eject`
+**Historia de usuário 1:**  
+Eu, como membro de uma empresa quero me cadastrar ou logar e ser encaminhado para o dashboard de vouchers.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Historia de usuário 2:**  
+Eu como membro de uma empresa quero definir valores, adicionar ou excluir pedidos de vouchers, e poder enviar essas informações para a página de criação de vouchers.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Historia de usuário 3:**  
+Eu como membro de uma empresa quero realizar os pagamentos dos vouchers por meio de cartão de crédito ou PIX.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 💡 Protótipos 
 
-## Learn More
+### Paleta de Cores 
+<div align="center" style="display: flex">
+  <img alt="paleta-cores" height="150" width="480" src="">
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<div align="center" style="display: flex">
+  <img alt="prototipo-login" height="380" width="480" src="">
 
-### Code Splitting
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
+## Como Utilizar
 
-### Analyzing the Bundle Size
+- A tela inicial da aplicação traz a **Página de Login** que apresenta ao usário as opções de fazer o login com email e senha já cadastrados e entrar na plataforma da Maria Voucher ou prosseguir para a Página de Cadastro;
+- Na **Página de Cadastro**, o usuário pode cadastrar-se inserindo seus dados de Nome, E-mail, Senha, Data de nascimento e CPF;
+- Ao realizar qualquer uma dessas formas de acesso, o usuário será encaminhado para o seu respectivo ambiente:<br/>
+    **Dashboard**: opções para acessar a compra ou consulta de vouchers
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+---
+## 🚀 Tecnologias Utilizadas
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ ![img](		https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-### Advanced Configuration
+ Linguagem de marcação 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ![img](			https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-### Deployment
+ Linguagem de estilização
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+ ![img](	https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-### `npm run build` fails to minify
+Linguagem de programação interpretada estrutura
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ ![img](	https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+Bibioteca do Javascript que auxilia na criação de interface
+
+ ![img](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+
+ Software de execução de códigos JavaScript
+
+  ![img](	https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+ Sistemas de controle de versões distribuídos
+
+ ![img](	https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+ Editor gráfico de vetor e prototipagem de projetos
+
+
+---
+
+## Estrutura dos Principais Arquivos
+```
+.
+├── 📁public
+|
+├── 📁src
+|   ├── 📁components
+|   |   ├── 📁Button
+|   |   ├── 📁
+|   |   ├── 📁
+|   |   ├── 📁Header
+|   |   ├── 📁Input
+|   |   ├── 📁
+|   |   ├── 📁
+|   |   ├── 📁ValidationMessage
+|   |
+|   ├── 📁img
+|   |
+|   ├── 📁pages
+|   |   ├── 📁
+|   |   ├── 📁
+|   |   ├── 📁
+|   |   |── 📁
+|   |   └── 📁
+|   |
+|   |
+|   ├── 📄
+|   ├── 📄
+|   └── 📄
+|   └── 📄
+|
+├── 📄README.md
+└── 📄package.json
+```
+
+
+
+---
+
+## ✔️ Resultados
+
+* #### Desktop
+
+![img](./src/img/NavegaçãoDesktop.gif)
+
+
+* #### Tablet
+
+![img](./src/img/TabletResponsive.gif)
+
+
+---
+## 👩‍💻 Colaboradoras 
+
+
+<table>
+  <tr>
+      <td align="center">
+            <a href="#">
+            <img src="https://avatars.githubusercontent.com/u/62296172?v=4" width="100px" alt="Foto de Bruna Calixto no GitHub"/><br>
+            <sub>
+            <b>Bruna Calixto</b><br>
+            </sub>
+            </a>
+      </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/72632554?v=4" width="100px;" alt="Foto de Sabrina Araújo no GitHub"/><br>
+        <sub>
+          <b>Sabrina Araújo</b><br>
+        </sub>
+      </a>
+    </td>
+   
+  </tr>
+</table>
+
+<table width="300">
+      <td>
+            <a href="https://github.com/bruna-devbio/"><img src="./src/img/github.png" alt="ícone github" width="20px" height="20px">
+            <a href="https://www.linkedin.com/in/brunacalixtodevjunior/"><img src="./src/img/linkedin.png" alt="ícone linkedin" width="20px" height="20px">
+      </td>
+      <td>
+            <a href="https://github.com/sabrinaaraujo-ds"><img src="./src/img/github.png" alt="ícone github" width="20px" height="20px">
+            <a href="https://www.linkedin.com/in/sabrina-araujo-ds/"><img src="./src/img/linkedin.png" alt="ícone linkedin" width="20px" height="20px">
+      </td>
+
+</table>
+
+
