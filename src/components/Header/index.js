@@ -1,13 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import './index.css';
 import './responsive.css';
 import logoPreto from '../../assets/img/LogoPreto.png';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { logout } from "../../services";
 
 const Header = ({
   show,
   buy,
 }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    logout()
+     navigate('/')
+  }
   return (
     <header>
       <div className='header-container'>
@@ -16,7 +23,10 @@ const Header = ({
             <img className='header-img-user' src={logoPreto} alt='logo-user' />
           </div>
           <div className='header-icon'>
-            <LogoutIcon className='header-logout-icon' />
+            <LogoutIcon 
+            onClick={() => handleClick()} 
+            className='header-logout-icon'
+            />
           </div>
         </div>
         <div className='header-title'>
