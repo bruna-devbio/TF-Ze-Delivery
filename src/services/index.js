@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -14,7 +13,7 @@ export const loginPage = (email, password) => {
   return firebase
     .auth()
     .signInWithEmailAndPassword(email, password);
-}; 
+};
 
 export const registerPage = (email, password) => {
   if (firebase.auth().currentUser) {
@@ -40,8 +39,8 @@ export const logout = () => {
     .then(() => {
       console.log('foi');
     }).catch(() => {
-			alert('erro')
-		})
+      alert('erro')
+    })
 };
 
 export const addUsers = (userId) => firebase

@@ -45,6 +45,14 @@
     background-color: #515255;
 }
 
+.sidebar-buy-vouchers.disable,
+.sidebar-see-vouchers.disable,
+.sidebar-logout-icon.disable {
+    pointer-events: none;
+    opacity: 0.7;
+    cursor: no-drop;
+}
+
 .sidebar-buy-vouchers:hover,
 .sidebar-see-vouchers:hover {
     background-color: #515255;

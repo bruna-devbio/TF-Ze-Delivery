@@ -9,9 +9,12 @@ const Navbar = ({
     buy,
     setShow,
     setBuy,
+    pay
 }) => {
     return (
-        <div className='navbar-container'>
+        <div className='navbar-container' style={{
+            display: pay && 'none'
+        }}>
             <div className={`navbar-buy-vouchers ${buy && 'active'}`} onClick={() => setBuy(true, setShow(false))}>
                 <ShoppingCartIcon />
                 <p className='navbar-p'>COMPRAR VOUCHERS</p>

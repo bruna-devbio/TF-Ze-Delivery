@@ -13,27 +13,27 @@ const Sidebar = ({
     buy,
     setShow,
     setBuy,
+    pay
 }) => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/')
+        navigate('/login')
         logout()
     }
     return (
         <div className='sidebar-container'>
             <div className='sidebar-icon'>
-                <LogoutIcon 
-                    className='sidebar-logout-icon'
-                   onClick={() => handleClick()} 
+                <LogoutIcon className={`sidebar-logout-icon ${pay ? 'disable' : ''}`}
+                    onClick={() => handleClick()}
                     style={{
-                    fontSize: '2.5rem'
-                }} />
+                        fontSize: '2.5rem'
+                    }} />
             </div>
-            <div className={`sidebar-buy-vouchers ${buy && 'active'}`} onClick={() => setBuy(true, setShow(false))}>
+            <div className={`sidebar-buy-vouchers ${buy ? 'active' : pay ? 'disable' : ''}`} onClick={() => setBuy(true, setShow(false))}>
                 <ShoppingCartIcon />
                 <p className='sidebar-p'>COMPRAR VOUCHERS</p>
             </div>
-            <div className={`sidebar-see-vouchers ${show && 'active'}`} onClick={() => setShow(true, setBuy(false))}>
+            <div className={`sidebar-see-vouchers ${show ? 'active' : pay ? 'disable' : ''}`} onClick={() => setShow(true, setBuy(false))}>
                 <InventoryIcon />
                 <p className='sidebar-p'>CONSULTAR VOUCHERS</p>
             </div>
