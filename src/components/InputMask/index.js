@@ -6,31 +6,25 @@ const InputMasked = ({
   value,
   onChange,
   name,
-  mask
+  mask,
+  className,
+  key,
+  type,
+  placeholder,
 }) => {
 
-  const onlyNumbers = (str) => str.replace(/[^0-9]/g, '');
-  function handleChange(e) {
-    onChange({
-      ...e,
-      target: {
-        ...e.target,
-        name,
-        value: onlyNumbers(e.target.value)
-      }
-    });
-  }
-
-  // tela cadastro
   return (
     <InputMask
-      name="cpf"
+      name={name}
+      placeholder={placeholder}
+      type={type}
       mask={mask}
       value={value}
-      onChange={handleChange}
+      onChange={onChange}
+      className={className}
+      key={key}
     />
   );
-  // 
 };
 
 export default InputMasked;

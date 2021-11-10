@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -32,3 +31,23 @@ export const signInGoogleAccount = () => {
     .auth()
     .signInWithPopup(provider);
 };
+
+export const logout = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log('foi');
+    }).catch(() => {
+      alert('erro')
+    })
+};
+
+export const addUsers = (userId) => firebase
+  .firestore()
+  .collection('users')
+  .add(userId).then(() => {
+    console.log('foi');
+  }).catch(() => {
+    alert('erro adicionar')
+  });

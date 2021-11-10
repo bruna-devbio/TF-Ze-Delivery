@@ -1,8 +1,10 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { loginPage, signInGoogleAccount } from "../../services/index";
+import ValidateInputs from "./validationLogin";
+import ValidationMessage from "../../components/Validation/ValidationMessage";
 import logoAmarelo from "../../assets/img/LogoAmarelo.png";
 import nomeAmarelo from "../../assets/img/NomeAmarelo.png";
 import logoMobile from "../../assets/img/LogoMobile.png";
@@ -10,6 +12,10 @@ import './index.css';
 import './responsive.css';
 
 const Login = () => {
+	const navigate = useNavigate();
+
+	const [errors, setError] = useState({})
+
 
 	const [values, setValues] = useState({
 		email: '',
@@ -24,19 +30,20 @@ const Login = () => {
 		})
 	};
 
+
 	const handleClick = (event) => {
 		event.preventDefault()
+		setError(ValidateInputs(values))
 		loginPage(values.email, values.password).then(() => {
-			alert('login funcionando')
+			navigate('/home')
 		}).catch(() => {
-			alert('erro')
 		})
 	};
 
 	const loginGoogle = (event) => {
 		event.preventDefault()
 		signInGoogleAccount().then(() => {
-			alert('entrou')
+			navigate('/home')
 		}).catch(() => {
 			alert('erro')
 		})
@@ -69,6 +76,7 @@ const Login = () => {
 							value={values.email}
 						>
 						</Input>
+						{errors.email && <ValidationMessage>{errors.email}</ValidationMessage>}
 
 						<Input
 							type='password'
@@ -78,6 +86,7 @@ const Login = () => {
 							onChange={onChangeValues}
 							value={values.password}>
 						</Input>
+						{errors.password && <ValidationMessage>{errors.password}</ValidationMessage>}
 
 
 						<Button
