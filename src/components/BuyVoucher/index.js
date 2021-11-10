@@ -37,6 +37,7 @@ const BuyVouchers = ({
 
     const addVoucher = () => {
         setValues([...values, { voucher: '', qtd: 1 }]);
+        setNoOrders(false)
     }
 
     const removeVoucher = (element) => {
@@ -96,7 +97,6 @@ const BuyVouchers = ({
                                     if (item.qtd >= 0 && (element === item)) {
                                         values[i].qtd++
                                         setValues([...values])
-                                        setNoOrders(false)
                                     }
                                     return item;
                                 })

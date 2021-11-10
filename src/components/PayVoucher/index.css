@@ -4,6 +4,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    transition: all ease 0.8s;
 }
 
 .payment-h1 {
@@ -221,6 +222,9 @@
     cursor: pointer;
 }
 
+.payment-back.disable {
+    display: none;
+}
 
 .payment-qr-code-div {
     display: flex;
@@ -231,4 +235,40 @@
 
 .payment-qrCode {
     margin: 1rem 0rem;
+}
+
+.payment-complete {
+    display: flex;
+    margin-top: 0rem;
+    background-color: #fff;
+    border-radius: 10px;
+    justify-content: space-between;
+    box-shadow: 0 0 1em #00000025;
+    flex-direction: column;
+    width: 20rem;
+    margin: 2rem 2rem;
+    padding: 1.2rem 3rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-h1-complete {
+    font-size: 1.7rem;
+    margin: 0rem 0rem 0rem;
+}
+
+.check {
+    color: var(--amarelo);
+}
+
+.payment-p-complete {
+    color: var(--cinza);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.payment-p-complete:hover {
+    color: var(--amarelo);
+    transition: all ease 1s;
+    font-size: 1.3rem;
 }

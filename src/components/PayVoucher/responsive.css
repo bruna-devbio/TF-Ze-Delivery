@@ -80,4 +80,20 @@
     .payment-back {
         margin: 3.3rem 0rem 0rem 0rem;
     }
+
+    .payment-complete {
+        width: 60vw;
+    }
+
+    .check {
+        color: var(--cinza);
+    }
+
+    .payment-p-complete {
+        color: var(--amarelo);
+    }
+
+    .payment-p-complete:hover {
+        color: var(--cinza);
+    }
 }

@@ -39,9 +39,8 @@ const Register = () => {
 				const user = resp.user.uid
 				localStorage.setItem('uid', user)
 				localStorage.setItem('name', values.name)
-				navigate('/login')
+				navigate('/home')
 			}).catch(() => {
-
 			})
 		}).catch(() => {
 
