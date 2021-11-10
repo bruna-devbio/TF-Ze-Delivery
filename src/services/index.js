@@ -55,7 +55,10 @@ export const getName = (name) => {
   })
 }
 
-export const addVoucher = (voucher) => firebase
+export const createVoucher = (voucher) => {
+  const item = {voucher}
+  firebase
   .firestore()
   .collection('vouchers')
-  .add(voucher);
+  .add(item);
+}
