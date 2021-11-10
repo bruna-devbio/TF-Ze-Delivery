@@ -36,7 +36,7 @@
     }
 
     .orders-scroll {
-        min-height: 20vh;
+        margin-bottom: 15vh;
     }
 
     .orders-btn {
@@ -48,6 +48,11 @@
     .orders-p-voucher,
     .orders-p-qtd {
         font-size: 0.9rem;
+    }
+
+    .orders-div-total {
+        width: 90%;
+        position: fixed
     }
 
     .orders-items {
