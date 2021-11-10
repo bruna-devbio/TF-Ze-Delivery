@@ -2,6 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import firebaseConfig from './firebaseConfig';
+import { getAuth, updateProfile } from "firebase/auth";
 
 const fs = firebase.initializeApp(firebaseConfig);
 const db = fs.firestore();
@@ -21,7 +22,7 @@ export const registerPage = (email, password) => {
   }
   return firebase
     .auth()
-    .createUserWithEmailAndPassword(email, password);
+    .createUserWithEmailAndPassword(email, password)
 };
 
 export const signInGoogleAccount = () => {
@@ -33,14 +34,9 @@ export const signInGoogleAccount = () => {
 };
 
 export const logout = () => {
-  firebase
+  return firebase
     .auth()
     .signOut()
-    .then(() => {
-      console.log('foi');
-    }).catch(() => {
-      alert('erro')
-    })
 };
 
 export const addUsers = (userId) => firebase
@@ -51,6 +47,13 @@ export const addUsers = (userId) => firebase
   }).catch(() => {
     alert('erro adicionar')
   });
+
+export const getName = (name) => {
+  const auth = getAuth();
+  return updateProfile(auth.currentUser, {
+    displayName: name,
+  })
+}
 
 export const addVoucher = (voucher) => firebase
   .firestore()
