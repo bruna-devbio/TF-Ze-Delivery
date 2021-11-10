@@ -5,6 +5,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import Orders from "../Orders";
 import Button from "../Button";
 import formatCurrency from "../../utils/currency";
+import { createVoucher } from "../../services";
 import "./index.css";
 import "./responsive.css";
 
@@ -18,7 +19,7 @@ const BuyVouchers = ({
         voucher: 0,
         qtd: 1,
     }]);
-
+                                            
 
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -50,13 +51,13 @@ const BuyVouchers = ({
         values.forEach((item) => {
            const obj = {
                 price: item.voucher,
-                qtd: item.qtd
+                qtd: item.qtd,
+                userId: id
             }
             array.push(obj)
         })
-        console.log(array)      
-
-        setPayVouchers(true, hidden(false))
+        createVoucher(array)
+       
     }
     
 
