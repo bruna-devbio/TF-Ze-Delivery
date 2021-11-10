@@ -8,7 +8,7 @@ import logoMobile from "../../assets/img/LogoMobile.png";
 import { registerPage, getName } from '../../services/index';
 import ValidateInputs from "./validationRegister";
 import ValidationMessage from "../../components/Validation/ValidationMessage";
-import InputMasked from "../../components/InputMask";
+import InputMasked from "../../utils/inputMask";
 import './index.css';
 import './responsive.css';
 

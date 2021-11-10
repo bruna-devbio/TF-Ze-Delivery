@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import InputMasked from "../InputMask";
+import Input from "../Input";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import Orders from "../Orders";
@@ -15,7 +15,7 @@ const BuyVouchers = ({
 
     const [noOrders, setNoOrders] = useState(true);
     const [values, setValues] = useState([{
-        voucher: 0,
+        voucher: '',
         qtd: 1,
     }]);
 
@@ -25,7 +25,6 @@ const BuyVouchers = ({
         let price = values.reduce((acc, item) => acc + item.voucher * item.qtd, 0)
         setTotalPrice(price)
     }, [values])
-
 
     const handleChange = (i, e) => {
         console.log(e.target.value)
@@ -52,7 +51,7 @@ const BuyVouchers = ({
                 {values.map((element, index) => (
                     <div className="voucher-div-input" key={index}>
                         <label className="voucher-label">R$</label>
-                        <InputMasked
+                        <Input
                             type='number'
                             placeholder='Valor do Voucher'
                             className='voucher-input'
@@ -60,7 +59,7 @@ const BuyVouchers = ({
                             onChange={(e) => handleChange(index, e)}
                             value={element.voucher}
                         >
-                        </InputMasked>
+                        </Input>
                         <div className="voucher-amount-order">
                             <Button className="voucher-less-item" buttonOnClick={() => {
                                 values.map((item, i) => {
