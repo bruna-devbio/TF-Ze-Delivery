@@ -61,10 +61,9 @@ const BuyVouchers = ({
             vouchers: vouchers,
         }
 
-        createVoucher(docObj)
-            .then(() => {
-                setPayVouchers(true, hidden(false))
-            })
+        createVoucher(docObj).then(() => {
+            setPayVouchers(true, hidden(false))
+        })
     }
 
     return (
@@ -134,7 +133,7 @@ const BuyVouchers = ({
             </Orders>
         </section >
     );
-    
+
 };
 
 export default BuyVouchers;
