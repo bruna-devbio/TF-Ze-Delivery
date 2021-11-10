@@ -8,7 +8,6 @@ const InputMasked = ({
   name,
   mask,
   className,
-  key,
   type,
   placeholder,
 }) => {
@@ -22,7 +21,6 @@ const InputMasked = ({
       value={value}
       onChange={onChange}
       className={className}
-      key={key}
     />
   );
 };
