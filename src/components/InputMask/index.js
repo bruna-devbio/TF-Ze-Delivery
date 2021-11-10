@@ -2,11 +2,17 @@ import React from 'react';
 import InputMask from 'react-input-mask';
 
 
-const InputMasked = ({type, placeholder, value, onChange, name, mask }) => {
+const InputMasked = ({
+  value,
+  onChange,
+  name,
+  mask,
+  type,
+  placeholder,
+}) => {
 
   /*const onlyNumbers = (str) => str.replace(/[^0-9]/g, '');
   
-
   function handleChange(e) {
     onChange({
       ...e,

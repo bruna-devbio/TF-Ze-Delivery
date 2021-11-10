@@ -14,7 +14,7 @@ export const loginPage = (email, password) => {
   return firebase
     .auth()
     .signInWithEmailAndPassword(email, password);
-};
+}; 
 
 export const registerPage = (email, password) => {
   if (firebase.auth().currentUser) {
