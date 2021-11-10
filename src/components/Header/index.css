@@ -44,6 +44,10 @@
 .header-icon {
     display: flex;
     justify-content: flex-end;
+    width: 0%;
+}
+
+.header-icon.active {
     width: 10%;
 }
 
