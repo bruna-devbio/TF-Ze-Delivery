@@ -53,16 +53,17 @@ export const getName = (name) => {
   return updateProfile(auth.currentUser, {
     displayName: name,
   })
-}
+};
 
 export const createVoucher = (voucher) => {
   const item = { voucher }
-  return firebase
+  firebase
     .firestore()
     .collection('vouchers')
     .add(item);
-}
+};
+
 export const getVoucher = () => {
   const getVoucher = firebase.firestore().collection('vouchers')
   return getVoucher.get()
-}
+};

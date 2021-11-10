@@ -60,10 +60,9 @@ const BuyVouchers = ({
             userId: id,
             vouchers: vouchers,
         }
+        createVoucher(docObj)
+        setPayVouchers(true, hidden(false))
 
-        createVoucher(docObj).then(() => {
-            setPayVouchers(true, hidden(false))
-        })
     }
 
     return (
