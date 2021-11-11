@@ -5,7 +5,7 @@ import "./index.css";
 import "./responsive.css";
 
 const Welcome = () => {
-  
+
   const navigate = useNavigate();
   navigate('/Login')
 
@@ -20,10 +20,7 @@ const Welcome = () => {
       </div>
 
       <div className="home-texto">
-        <h1 className="home-titulo">Seja bem-vinde!</h1>
-
-        <h3>Saudades de um Happy Hour né minha filha?</h3>
-
+        <h1 className="home-titulo">Saudades de um Happy Hour né minha filha?</h1>
         <p>
           Compre com Maria Voucher os melhores cupons, para seus funcionários
           sextar de forma segura e com qualidade.
@@ -37,7 +34,7 @@ const Welcome = () => {
           buttonOnClick={navigate}>
           CONTINUAR
         </Button>
-      
+
       </div>
     </main>
   )
