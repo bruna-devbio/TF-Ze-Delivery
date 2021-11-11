@@ -39,15 +39,6 @@ export const logout = () => {
     .signOut()
 };
 
-export const addUsers = (userId) => firebase
-  .firestore()
-  .collection('users')
-  .add(userId).then(() => {
-    console.log('foi');
-  }).catch(() => {
-    alert('erro adicionar')
-  });
-
 export const getName = (name) => {
   const auth = getAuth();
   return updateProfile(auth.currentUser, {
@@ -56,14 +47,13 @@ export const getName = (name) => {
 };
 
 export const createVoucher = (voucher) => {
-  const item = { voucher }
-  firebase
+  return firebase
     .firestore()
     .collection('vouchers')
-    .add(item);
+    .add(voucher);
 };
 
 export const getVoucher = () => {
   const getVoucher = firebase.firestore().collection('vouchers')
   return getVoucher.get()
-};
+}

@@ -20,30 +20,28 @@ const BuyVouchers = ({
         qtd: 1,
     }]);
 
-    const [totalPrice, setTotalPrice] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
         let price = values.reduce((acc, item) => acc + item.voucher * item.qtd, 0)
         setTotalPrice(price)
-    }, [values])
-
+    }, [values]);
 
     const handleChange = (i, e) => {
         let value = [...values];
         value[i][e.target.name] = Number(e.target.value);
         setValues(value);
-
-    }
+    };
 
     const addVoucher = () => {
         setValues([...values, { voucher: '', qtd: 1 }]);
         setNoOrders(false)
-    }
+    };
 
     const removeVoucher = (element) => {
         values.splice(element, 1)
         setValues([...values])
-    }
+    };
 
     const createVouchers = () => {
         const id = localStorage.getItem('uid')
@@ -52,7 +50,6 @@ const BuyVouchers = ({
             const obj = {
                 price: item.voucher,
                 qtd: item.qtd,
-
             }
             vouchers.push(obj)
         })
@@ -60,10 +57,10 @@ const BuyVouchers = ({
             userId: id,
             vouchers: vouchers,
         }
-        createVoucher(docObj)
-        setPayVouchers(true, hidden(false))
-
-    }
+        createVoucher(docObj).then(() => {
+            setPayVouchers(true, hidden(false))
+        })
+    };
 
     return (
         <section className="voucher-container">
@@ -74,7 +71,6 @@ const BuyVouchers = ({
                         <label className="voucher-label">R$</label>
                         <Input
                             type='number'
-                            min='150'
                             placeholder='Valor do Voucher'
                             className='voucher-input'
                             name='voucher'
@@ -132,7 +128,6 @@ const BuyVouchers = ({
             </Orders>
         </section >
     );
-
 };
 
 export default BuyVouchers;

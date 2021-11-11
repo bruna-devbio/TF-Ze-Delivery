@@ -11,7 +11,7 @@ const SeeVoucher = () => {
       .then(snap => {
         const vouchers = []
         snap.forEach(doc => {
-          vouchers.push(doc.data().vouchers)
+          vouchers.push(doc.data())
         })
         setVouchers(vouchers)
         console.log(vouchers)
@@ -24,21 +24,21 @@ const SeeVoucher = () => {
       <div className='seevoucher-main'>
         {
           vouchers.map((item, key) => (
-            item.map((element) => (
-              <div className='seevoucher-item'>
-                <div className='voucher-info'>
-                  <input type='checkbox' />
-                  <div className='voucher-detail'>
-                    <p>{element.price}</p>
-                    <p>{element.qtd}</p>
-                  </div>
+            <div className='seevoucher-item'>
+              <div className='voucher-info'>
+                <input type='checkbox' />
+                <div className='voucher-detail'>
+                  <p>{item.userId}</p>
+                  {item.vouchers.map((voucher) => (
+                    <p>{voucher.price} <b>{voucher.qtd}</b></p>
+                  ))}
                 </div>
-                <select name='select' className='select-options'>
-                  <option value='email'>Email</option>
-                  <option value='json'>JSON</option>
-                </select>
               </div>
-            ))
+              <select name='select' className='select-options'>
+                <option value='email'>Email</option>
+                <option value='json'>JSON</option>
+              </select>
+            </div>
           ))
         }
       </div>
