@@ -13,6 +13,8 @@ const Dashboard = () => {
     const [showVouchers, setShowVouchers] = useState(false);
     const [buyVouchers, setBuyVouchers] = useState(false);
     const [payVouchers, setPayVouchers] = useState(false);
+    const [showPrice, setShowPrice] = useState(0)
+    
 
     return (
         <section className='dashboard-container'>
@@ -42,8 +44,8 @@ const Dashboard = () => {
             {payVouchers && <h1 className='dashboard-h1'>Pagamento</h1>}
             <div className='dashboard-div'>
                 {showVouchers && <SeeVoucher />}
-                {buyVouchers && <BuyVouchers setPayVouchers={setPayVouchers} hidden={setBuyVouchers} />}
-                {payVouchers && <PayVoucher pay={payVouchers} setPay={setPayVouchers} show={setBuyVouchers} showVouchers={setShowVouchers} />}
+                {buyVouchers && <BuyVouchers setPayVouchers={setPayVouchers} hidden={setBuyVouchers} setShowPrice={setShowPrice} />}
+                {payVouchers && <PayVoucher pay={payVouchers} setPay={setPayVouchers} show={setBuyVouchers} showVouchers={setShowVouchers} showPrice={showPrice} />}
             </div>
         </section>
     )

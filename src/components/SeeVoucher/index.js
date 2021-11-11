@@ -18,6 +18,7 @@ const SeeVoucher = () => {
   const [JSON, setJSON] = useState(false);
   const [loading, setLoading] = useState(false);
   const [voucherSend, setVoucherSend] = useState(false);
+  const currentUser = localStorage.getItem('uid')
 
   const handleClick = () => {
     setLoading(true);
@@ -29,11 +30,13 @@ const SeeVoucher = () => {
       .then(snap => {
         const vouchers = []
         snap.forEach(doc => {
-          vouchers.push(doc.data())
+          if (currentUser === doc.data().userId) {
+            vouchers.push(doc.data())
+          }
         })
         setVouchers(vouchers)
       })
-  }, []);
+  }, [currentUser]);
 
   return (
     <section className='vouchers-container'>

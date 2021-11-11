@@ -88,3 +88,7 @@
 .voucher-input-qtd {
     padding: 0rem 0.8rem;
 }
+
+.orders-btn-active {
+    display: none;
+}
