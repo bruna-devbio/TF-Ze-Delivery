@@ -8,12 +8,12 @@ import { PageNotFound } from './pages/PageNotFound';
 import './App.css';
 
 function App() {
-  const user = localStorage.getItem('uid');
+  const user = () => localStorage.getItem('uid');
   return (
     <Routes>
       <Route path='/' element={<Welcome />} />
       <Route path='/register' element={<Register />} />
-      <Route path='/home' element={user ? < Dashboard /> : <Login />} />
+      <Route path='/home' element={user() ? < Dashboard /> : <Login />} />
       <Route path='/login' element={< Login />} />
       <Route path='*' exact={true} element={<PageNotFound />} />
     </Routes >
