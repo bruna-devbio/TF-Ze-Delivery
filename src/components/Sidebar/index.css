@@ -56,7 +56,8 @@
 .sidebar-buy-vouchers:hover,
 .sidebar-see-vouchers:hover {
     background-color: #515255;
-    transition: all ease 0.1s;
+    transition: all ease 0.9s;
+    font-size: 1.2rem;
 }
 
 .sidebar-p {

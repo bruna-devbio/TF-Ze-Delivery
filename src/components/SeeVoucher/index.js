@@ -10,7 +10,10 @@ import Modal from "../Modal";
 import './index.css';
 import './responsive.css';
 
-const SeeVoucher = () => {
+const SeeVoucher = ({
+  buyVouchers,
+  setShow,
+}) => {
 
   const [vouchers, setVouchers] = useState([]);
   const [select, setSelect] = useState(false);
@@ -50,7 +53,8 @@ const SeeVoucher = () => {
               Seu vouchers foram enviados com sucesso.
             </p>
           </div>
-          <p className="vouchers-p-complete" >
+          <p className="vouchers-p-complete" onClick={() => buyVouchers(true, setShow(false))}>
+            Voltar para o inicio
           </p>
         </div>
         : vouchers.map((item, key) => (
