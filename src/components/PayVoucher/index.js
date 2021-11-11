@@ -22,16 +22,13 @@ const PayVoucher = ({
     const [pix, setPix] = useState(false);
     const [loading, setLoading] = useState(false);
     const [orderSend, setOrderSend] = useState(false);
-    const [showButton, setShowButton] = useState(true)
+    const [showButton, setShowButton] = useState(true);
 
     const handleClick = () => {
         setLoading(true);
         setTimeout(() => setLoading(false, setOrderSend(true)), 4500);
     };
 
-    const oi = () => {
-        console.log('funcao do botao')
-    }
     return (
         <section className="payment-container">
             {pay && <ArrowBackIcon className={`payment-back ${orderSend && 'disable'}`} onClick={() => setPay(false, show(true))} style={{
@@ -75,9 +72,9 @@ const PayVoucher = ({
                             {showButton &&
                                 <Button className="payment-btn" buttonOnClick={handleClick}>
                                     EFETUAR PAGAMENTO
-                                </Button>  
+                                </Button>
                             }
-                          
+
                             {loading && <Loading />}
                         </div>
                         : pix ? <div className="payment-data">

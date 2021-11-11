@@ -81,7 +81,7 @@ const SeeVoucher = () => {
                     </div>
                     <div className="modal-rows">
                       <div className="modal-column-row">
-                        <p className="modal-p-code">MARIAV0{item.userId.length > 10 && item.userId.substring(0, 7).toUpperCase()}</p>
+                        <p className="modal-p-code">MARIAV{item.userId.length > 10 && item.userId.substring(0, 7).toUpperCase()}</p>
                         <Input className="modal-input-email" placeholder="Digite o e-mail" />
                       </div>
                     </div>
@@ -93,6 +93,7 @@ const SeeVoucher = () => {
                     </div>
                   </div>
                 </Modal>}
+                {/* {JSON ? :} */}
                 {loading && <Loading />}
               </div>
             </div>
