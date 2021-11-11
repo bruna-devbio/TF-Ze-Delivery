@@ -1,45 +1,157 @@
-.seevoucher-main {
+.vouchers-container {
+    margin: 8rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    transition: all ease 0.8s;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.seevoucher-item {
     display: flex;
     margin-top: 0rem;
     align-items: center;
     background-color: #fff;
-    width: 24rem;
-    margin: 1rem 2rem;
+    width: 20rem;
+    margin: 1rem 1rem;
     padding: 1rem;
     border-radius: 18px;
     flex-direction: column;
     align-items: flex-start;
     box-shadow: 0 0 1em #00000025;
-    overflow-y: scroll;
-    max-height: 12rem;
     justify-content: space-between;
 }
 
-.seevoucher-item {
+.seevoucher-data {
     display: flex;
-    width: 90%;
-    justify-content: space-between;
-    text-align: start;
-    padding: 1rem 0rem 1rem;
-    margin: 0.2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0rem 3rem
 }
 
-.voucher-info {
-    display: flex;
+.seevoucher-total {
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
-.voucher-detail {}
+.seevoucher-logo {
+    width: 4rem;
+    margin: 0.3rem 1rem 0rem 0rem;
+}
 
-.select-options {
+.seevoucher {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     text-align: center;
-    width: 8rem;
+    align-items: center;
+    margin: 0.3rem 0rem;
 }
 
-.seevoucher-main::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+.seevoucher-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0.8rem 0rem;
+    border-radius: 8px;
+    border: 1px solid grey;
+    cursor: pointer;
 }
 
-.seevoucher-main::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
+.seevoucher-select.active {
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.seevoucher-select.active:hover {
+    background-color: transparent;
+}
+
+
+.seevoucher-select:hover {
+    background-color: #3d3d3d25;
+    transition: all ease 0.8s;
+}
+
+.seevoucher-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0rem 0rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.seevoucher-email,
+.seevoucher-json {
+    padding: 1rem 0rem;
+}
+
+.seevoucher-email:hover,
+.seevoucher-json:hover {
+    background-color: #00000025;
+    width: 100%;
+    padding: 1rem 0rem;
+}
+
+.seevoucher-json:hover {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+}
+
+.vouchers-complete {
+    display: flex;
+    margin-top: 0rem;
+    background-color: #fff;
+    border-radius: 10px;
+    justify-content: space-between;
+    box-shadow: 0 0 1em #00000025;
+    flex-direction: column;
+    width: 20rem;
+    margin: 2rem 2rem;
+    padding: 1.2rem 3rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vouchers-h1-complete {
+    font-size: 1.7rem;
+}
+
+.vouchers-h1 {
+    font-size: 1.7rem;
+    margin: 8rem 3rem 0rem;
+}
+
+.check {
+    color: var(--amarelo);
+}
+
+.vouchers-p-complete {
+    color: var(--cinza);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.vouchers-p-complete:hover {
+    color: var(--amarelo);
+    transition: all ease 1s;
+    font-size: 1.3rem;
 }
