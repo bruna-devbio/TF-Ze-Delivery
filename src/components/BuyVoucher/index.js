@@ -13,6 +13,7 @@ const BuyVouchers = ({
     setPayVouchers,
     hidden
 }) => {
+    const [minval, setMinval] = useState(150);
 
     const [noOrders, setNoOrders] = useState(true);
     const [values, setValues] = useState([{
@@ -36,6 +37,7 @@ const BuyVouchers = ({
     const addVoucher = () => {
         setValues([...values, { voucher: '', qtd: 1 }]);
         setNoOrders(false)
+     
     };
 
     const removeVoucher = (element) => {
@@ -118,12 +120,15 @@ const BuyVouchers = ({
                         </div>
                     ))}
                 </div>
-                <div className='orders-div-total'>
+                <div className={`orders-div-total ${minval && 'active'}`}>
                     <div className='orders-total'>
                         <p className="orders-p-qtd">Total a pagar</p>
                         <p className="orders-p-voucher">{formatCurrency(totalPrice)}</p>
                     </div>
-                    <Button className='orders-btn' buttonOnClick={createVouchers}>IR PARA O PAGAMENTO</Button>
+                    {totalPrice === minval && 
+                     <Button className='orders-btn' buttonOnClick={createVouchers}>IR PARA O PAGAMENTO</Button>
+                    }
+                    
                 </div>
             </Orders>
         </section >
