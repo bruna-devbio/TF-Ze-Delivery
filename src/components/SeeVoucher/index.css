@@ -98,10 +98,7 @@
     border-radius: 0px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-}
-
-.seevoucher-select.active:hover {
-    background-color: transparent;
+    background-color: #3d3d3d25;
 }
 
 
@@ -123,7 +120,7 @@
     border-bottom-right-radius: 8px;
     border: 1px solid grey;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #fcfcfc;
     position: absolute;
 }
 
@@ -136,6 +133,11 @@
 .seevoucher-total {
     text-align: center;
     width: 100%;
+}
+
+.seevoucher-json-div {
+    text-decoration: none;
+    color: black;
 }
 
 .seevoucher-email-div:hover,
@@ -187,4 +189,8 @@
     color: var(--amarelo);
     transition: all ease 1s;
     font-size: 1.3rem;
+}
+
+.p-json.hidden {
+    display: none;
 }

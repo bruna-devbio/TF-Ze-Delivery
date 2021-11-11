@@ -32,6 +32,7 @@ const SeeVoucher = ({
         snap.forEach(doc => {
           if (currentUser === doc.data().userId) {
             const item = doc.data()
+            item.json = false
             item.email = false
             item.select = false
             vouchers.push(item)
@@ -55,7 +56,7 @@ const SeeVoucher = ({
       return voucher
     })
     setVouchers(vouchersArray)
-  }
+  };
   const handleEmail = (index) => {
     let emails = vouchers.map((voucher, i) => {
       if (index === i) {
@@ -70,7 +71,7 @@ const SeeVoucher = ({
       return voucher
     })
     setVouchers(emails);
-  }
+  };
 
   return (
     <section className='vouchers-container'>
@@ -111,9 +112,13 @@ const SeeVoucher = ({
                   <div className='seevoucher-email-div' onClick={() => handleEmail(index)}>
                     <p className="seevoucher-email">Enviar por e-mail</p>
                   </div>
-                  <div className='seevoucher-json-div' onClick={() => setJSON(true)}>
-                    <p className="seevoucher-json">Exportar em JSON</p>
-                  </div>
+                  <a className='seevoucher-json-div'
+                    href={`data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(vouchers[index]))}`}
+                    download="vouchers.json"
+                  >
+                    <div className='div-json'>{`Exportar por JSON`}
+                    </div>
+                  </a>
                 </div>}
               {item.email === true && <Modal>
                 <div className='modal-voucher'>
