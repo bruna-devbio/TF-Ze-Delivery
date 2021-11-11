@@ -11,7 +11,7 @@ import "./responsive.css";
 
 const BuyVouchers = ({
     setPayVouchers,
-    hidden,
+    setBuyVouchers,
     setShowPrice
 }) => {
 
@@ -47,6 +47,8 @@ const BuyVouchers = ({
     };
 
     const createVouchers = () => {
+        setPayVouchers(true)
+        setBuyVouchers(false)
         const id = localStorage.getItem('uid')
         const vouchers = []
         values.forEach((item) => {
@@ -62,7 +64,6 @@ const BuyVouchers = ({
             vouchers: vouchers,
         }
         createVoucher(docObj).then(() => {
-            setPayVouchers(true, hidden(false))
             setShowPrice(totalPrice)
         })
     };

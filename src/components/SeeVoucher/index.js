@@ -16,9 +16,6 @@ const SeeVoucher = ({
 }) => {
 
   const [vouchers, setVouchers] = useState([]);
-  const [select, setSelect] = useState(false);
-  const [email, setEmail] = useState(false);
-  const [JSON, setJSON] = useState(false);
   const [loading, setLoading] = useState(false);
   const [voucherSend, setVoucherSend] = useState(false);
   const currentUser = localStorage.getItem('uid')
@@ -34,12 +31,46 @@ const SeeVoucher = ({
         const vouchers = []
         snap.forEach(doc => {
           if (currentUser === doc.data().userId) {
-            vouchers.push(doc.data())
+            const item = doc.data()
+            item.email = false
+            item.select = false
+            vouchers.push(item)
           }
         })
         setVouchers(vouchers)
       })
   }, [currentUser]);
+
+  const handleSelect = (index) => {
+    let vouchersArray = vouchers.map((voucher, i) => {
+      if (index === i) {
+        if (voucher.select === true) {
+          voucher.select = false
+        } else {
+          voucher.select = true
+        }
+      } else {
+        voucher.select = false
+      }
+      return voucher
+    })
+    setVouchers(vouchersArray)
+  }
+  const handleEmail = (index) => {
+    let emails = vouchers.map((voucher, i) => {
+      if (index === i) {
+        if (voucher.email === true) {
+          voucher.email = false
+        } else {
+          voucher.email = true
+        }
+      } else {
+        voucher.email = false
+      }
+      return voucher
+    })
+    setVouchers(emails);
+  }
 
   return (
     <section className='vouchers-container'>
@@ -57,54 +88,61 @@ const SeeVoucher = ({
             Voltar para o inicio
           </p>
         </div>
-        : vouchers.map((item, key) => (
-          item.vouchers.map((voucher) => (
-            <div className='seevoucher-main'>
-              <div className='seevoucher-item'>
-                <div className='seevoucher-data'>
-                  <p className='seevoucher-qtd'>{voucher.qtd} Vouchers de {currency(voucher.price)}</p>
-                  <p className="seevoucher-total">Valor total: {currency(item.total)}</p>
-                </div>
-                <div className='seevoucher'>
-                  <img className='seevoucher-logo' src={LogoPreto} alt='logo' />
-                  <h1 className='seevoucher-value'>MARIAV0{item.userId.length > 10 && item.userId.substring(0, 7).toUpperCase()}</h1>
-                </div>
-                <div className={`seevoucher-select ${select && 'active'}`} onClick={() => select ? setSelect(false) : setSelect(true)}>
-                  <p className="seevoucher-select-send">Selecione o tipo de envio</p>
-                </div>
-                {select &&
-                  <div className='seevoucher-options'>
-                    <p className="seevoucher-email" onClick={() => setEmail(true)}>Enviar por e-mail</p>
-                    <p className="seevoucher-json" onClick={() => setJSON(true)}>Exportar em JSON</p>
-                  </div>}
-                {email && <Modal>
-                  <div className='modal-voucher'>
-                    <div className='modal-header'>
-                      <h2 className="modal-code">Código do voucher</h2>
-                      <h2 className="modal-email">e-mail</h2>
-                    </div>
-                    <div className="modal-rows">
-                      <div className="modal-column-row">
-                        <p className="modal-p-code">MARIAV{item.userId.length > 10 && item.userId.substring(0, 7).toUpperCase()}</p>
+        : vouchers.map((item, index) => (
+          <div className='seevoucher-main' key={index}>
+            <div className='seevoucher-item'>
+              <div className='seevoucher-scroll'>
+                {item.vouchers.map((voucher, key) => (
+                  <div className='seevoucher-data' key={key}>
+                    <p className='seevoucher-qtd'>{voucher.qtd} Vouchers de {currency(voucher.price)}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="seevoucher-total">Valor total: {currency(item.total)}</p>
+              <div className='seevoucher'>
+                <img className='seevoucher-logo' src={LogoPreto} alt='logo' />
+                <h1 className='seevoucher-value'>MARIAV0{item.userId.length > 10 && item.userId.substring(0, 7).toUpperCase()}</h1>
+              </div>
+              <div className={`seevoucher-select ${item.select === true && 'active'}`} onClick={() => handleSelect(index)}>
+                <p className="seevoucher-select-send">Selecione o tipo de envio</p>
+              </div>
+              {item.select === true &&
+                <div className='seevoucher-options'>
+                  <div className='seevoucher-email-div' onClick={() => handleEmail(index)}>
+                    <p className="seevoucher-email">Enviar por e-mail</p>
+                  </div>
+                  <div className='seevoucher-json-div' onClick={() => setJSON(true)}>
+                    <p className="seevoucher-json">Exportar em JSON</p>
+                  </div>
+                </div>}
+              {item.email === true && <Modal>
+                <div className='modal-voucher'>
+                  <div className='modal-header'>
+                    <h2 className="modal-code">Código do voucher</h2>
+                    <h2 className="modal-email">e-mail</h2>
+                  </div>
+                  <div className="modal-rows">
+                    {item.vouchers.map((v, index) => (
+                      < div className="modal-column-row" key={index} >
+                        {console.log(v)}
+                        <p className="modal-p-code">MARIAV{item.userId.length > 10 && item.userId.substring(0, 7).toUpperCase() && v.price}</p>
                         <Input className="modal-input-email" placeholder="Digite o e-mail" />
                       </div>
-                    </div>
-                    <div className="modal-info">
-                      <div className="modal-div-btn">
-                        <Button className='modal-btn' buttonOnClick={handleClick}>ENVIAR VOUCHER</Button>
-                        <Button className='modal-btn' buttonOnClick={() => setEmail(false)}>CANCELAR</Button>
-                      </div>
-                    </div>
+                    ))
+                    }
                   </div>
-                </Modal>}
-                {/* {JSON ? :} */}
-                {loading && <Loading />}
-              </div>
+                  <div className="modal-div-btn">
+                    <Button className='modal-btn' buttonOnClick={handleClick}>ENVIAR VOUCHER</Button>
+                    <Button className='modal-btn' buttonOnClick={() => handleEmail(index)}>CANCELAR</Button>
+                  </div>
+                </div>
+              </Modal>}
+              {loading && <Loading />}
             </div>
-          ))
+          </div>
         ))
       }
-    </section>
+    </section >
   )
 }
 
