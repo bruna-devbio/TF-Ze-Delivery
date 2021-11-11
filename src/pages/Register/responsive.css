@@ -1,6 +1,7 @@
 @media(max-width: 930px) {
 
     .register-container {
+        background-image: none;
         background-color: var(--amarelo);
     }
 

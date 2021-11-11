@@ -41,6 +41,7 @@
 
 .orders-scroll {
     overflow-y: scroll;
+    margin-bottom: 17vh;
 }
 
 .orders-scroll::-webkit-scrollbar {
@@ -73,13 +74,19 @@
 }
 
 .orders-div-total {
-    margin: 0rem 1.2rem 1rem;
+    margin: 14rem 1.2rem 1rem;
+    position: fixed;
+}
+
+.orders-total.active {
+    width: 190%;
 }
 
 .orders-total {
     margin: 0rem 0rem 1rem;
     border-top: 1px solid grey;
     padding: 0.5rem 0.5rem 0rem;
+    width: 90%;
 }
 
 .orders-btn {
@@ -91,4 +98,8 @@
 .orders-btn:hover {
     color: var(--amarelo);
     transition: all ease 0.8s;
+}
+
+.orders-btn-active {
+    display: none;
 }

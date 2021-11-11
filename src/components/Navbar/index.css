@@ -27,12 +27,15 @@
 .navbar-buy-vouchers.active,
 .navbar-see-vouchers.active {
     background-color: #ffd45f;
+    transition: all ease 0.9s;
+    font-size: 1.3rem;
 }
 
 .navbar-buy-vouchers:hover,
 .navbar-see-vouchers:hover {
     background-color: #ffd45f;
-    transition: all ease 0.1s;
+    transition: all ease 0.9s;
+    font-size: 1.3rem;
 }
 
 .navbar-p {

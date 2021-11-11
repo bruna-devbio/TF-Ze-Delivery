@@ -1,0 +1,14 @@
+@media(max-width: 930px) {
+    .seevoucher-item {
+        width: auto;
+    }
+
+    .seevoucher-data {
+        margin: 0rem 0.6rem;
+        width: 100%;
+    }
+
+    .vouchers-complete {
+        width: auto;
+    }
+}

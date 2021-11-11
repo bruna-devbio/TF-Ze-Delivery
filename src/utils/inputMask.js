@@ -1,14 +1,12 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 
-
 const InputMasked = ({
   value,
   onChange,
   name,
   mask,
   className,
-  key,
   type,
   placeholder,
 }) => {
@@ -22,7 +20,7 @@ const InputMasked = ({
       value={value}
       onChange={onChange}
       className={className}
-      key={key}
+      required
     />
   );
 };

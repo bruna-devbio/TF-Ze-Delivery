@@ -32,6 +32,10 @@
     width: 100%;
 }
 
+.header-user.none {
+    display: none;
+}
+
 .header-img-user {
     width: 3.5rem;
 }
@@ -44,7 +48,7 @@
 .header-icon {
     display: flex;
     justify-content: flex-end;
-    width: 10%;
+    width: 0%;
 }
 
 .header-logout-icon {

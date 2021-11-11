@@ -1,6 +1,7 @@
 .dashboard-container {
     padding-left: 15vw;
     background-color: #f8f8f8;
+    transition: all ease 0.8s;
 }
 
 .dashboard-h1 {
@@ -8,10 +9,12 @@
     position: absolute;
     margin: 3rem;
     font-weight: bolder;
+    transition: all ease 0.8s;
 }
 
 .dashboard-div {
     display: flex;
     align-items: center;
     min-height: 100vh;
+    transition: all ease 0.8s;
 }

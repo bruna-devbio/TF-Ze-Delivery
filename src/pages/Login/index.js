@@ -15,8 +15,6 @@ const Login = () => {
 	const navigate = useNavigate();
 
 	const [errors, setError] = useState({})
-
-
 	const [values, setValues] = useState({
 		email: '',
 		password: '',
@@ -30,22 +28,26 @@ const Login = () => {
 		})
 	};
 
-
 	const handleClick = (event) => {
 		event.preventDefault()
 		setError(ValidateInputs(values))
-		loginPage(values.email, values.password).then(() => {
+		loginPage(values.email, values.password).then((resp) => {
+			const user = resp.user.uid
+			localStorage.setItem('uid', user)
 			navigate('/home')
 		}).catch(() => {
+
 		})
 	};
 
 	const loginGoogle = (event) => {
 		event.preventDefault()
-		signInGoogleAccount().then(() => {
+		signInGoogleAccount().then((resp) => {
+			const user = resp.user.uid
+			localStorage.setItem('uid', user)
 			navigate('/home')
 		}).catch(() => {
-			alert('erro')
+
 		})
 	};
 

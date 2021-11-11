@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PixQRCode from './index';
-import Button from '../Button';
+import PixQRCode from './pixQRCode';
+import Button from '../../components/Button';
 
 const Temporaria = () => {
   const [show, setShow] = useState(false);

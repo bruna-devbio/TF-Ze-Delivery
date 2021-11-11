@@ -1,11 +1,11 @@
 .login-container {
     display: flex;
-    background-color: var(--amarelo);
-
+    background-image: url('../../assets/img/background-right.png');
+    background-size: 100%;
+    background-position: center;
 }
 
 .login-logo {
-    background-color: var(--cinza);
     width: 50%;
     height: 100vh;
 }
@@ -37,6 +37,7 @@
     align-items: center;
     text-align: center;
     width: 50%;
+    margin: 0rem 0rem 0rem 10rem;
 }
 
 .login-fieldset {
