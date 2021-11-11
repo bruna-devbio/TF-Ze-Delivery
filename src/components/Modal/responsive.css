@@ -1,8 +1,11 @@
 @media(max-width: 930px) {
     .modal-voucher {
         width: 18rem;
-        height: 50vh;
         padding: 0px;
+    }
+
+    .modal-container {
+        min-height: 100vh;
     }
 
     .modal-column-row {
@@ -20,7 +23,6 @@
     }
 
     .modal-rows {
-        padding: 1rem 0rem 1rem;
         max-height: 3.8rem;
     }
 
