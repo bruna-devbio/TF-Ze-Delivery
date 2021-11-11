@@ -4,7 +4,6 @@ import './index.css';
 import './responsive.css';
 import logoPreto from '../../assets/img/LogoPreto.png';
 import LogoutIcon from '@mui/icons-material/Logout';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { logout } from "../../services";
 
 const Header = ({

@@ -55,6 +55,7 @@ const BuyVouchers = ({
         })
         const docObj = {
             userId: id,
+            total: totalPrice,
             vouchers: vouchers,
         }
         createVoucher(docObj).then(() => {

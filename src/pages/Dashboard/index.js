@@ -37,8 +37,8 @@ const Dashboard = () => {
                 setShow={setShowVouchers}
                 setBuy={setBuyVouchers}
             ></Navbar>
-            {showVouchers && <h1 className='dashboard-h1'>Consulta de voucher</h1>}
-            {buyVouchers && <h1 className='dashboard-h1'>Compra de voucher</h1>}
+            {showVouchers && <h1 className='dashboard-h1'>Consulta de vouchers</h1>}
+            {buyVouchers && <h1 className='dashboard-h1'>Compra de vouchers</h1>}
             {payVouchers && <h1 className='dashboard-h1'>Pagamento</h1>}
             <div className='dashboard-div'>
                 {showVouchers && <SeeVoucher />}
