@@ -94,3 +94,7 @@
     color: var(--amarelo);
     transition: all ease 0.8s;
 }
+
+.orders-btn-active {
+    display: none;
+}
