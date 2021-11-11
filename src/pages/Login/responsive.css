@@ -1,5 +1,10 @@
 @media(max-width: 930px) {
 
+    .login-container {
+        background-image: none;
+        background-color: var(--amarelo);
+    }
+
     .login-logo {
         display: none;
     }

@@ -45,7 +45,7 @@ const Dashboard = () => {
             {payVouchers && <h1 className='dashboard-h1'>Pagamento</h1>}
             <div className='dashboard-div'>
                 {buyVouchers ? null : showVouchers ? null : payVouchers ? null : <BuyVouchers />}
-                {showVouchers && <SeeVoucher />}
+                {showVouchers && <SeeVoucher buyVouchers={setBuyVouchers} setShow={setShowVouchers} />}
                 {buyVouchers && <BuyVouchers setPayVouchers={setPayVouchers} hidden={setBuyVouchers} setShowPrice={setShowPrice} />}
                 {payVouchers && <PayVoucher pay={payVouchers} setPay={setPayVouchers} show={setBuyVouchers} showVouchers={setShowVouchers} showPrice={showPrice} />}
             </div>
