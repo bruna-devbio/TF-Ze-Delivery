@@ -7,6 +7,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Loading from "../../components/Loading";
 import Button from '../Button';
 import CardMask from '../../utils/cardMask';
+import formatCurrency from "../../utils/currency";
 import "./index.css";
 import "./responsive.css";
 
@@ -14,18 +15,23 @@ const PayVoucher = ({
     pay,
     setPay,
     show,
-    showVouchers
+    showVouchers,
+    showPrice,
 }) => {
     const [card, setCard] = useState(false);
     const [pix, setPix] = useState(false);
     const [loading, setLoading] = useState(false);
     const [orderSend, setOrderSend] = useState(false);
+    const [showButton, setShowButton] = useState(true)
 
     const handleClick = () => {
         setLoading(true);
         setTimeout(() => setLoading(false, setOrderSend(true)), 4500);
     };
 
+    const oi = () => {
+        console.log('funcao do botao')
+    }
     return (
         <section className="payment-container">
             {pay && <ArrowBackIcon className={`payment-back ${orderSend && 'disable'}`} onClick={() => setPay(false, show(true))} style={{
@@ -61,14 +67,17 @@ const PayVoucher = ({
                                 : <h1 className="payment-h1">Escolha uma forma de pagamento</h1>}
                     <div className="payment-total">
                         <p className="orders-p-qtd">Total a pagar</p>
-                        <p className="orders-p-voucher">R$ 150,00</p>
+                        <p className="orders-p-voucher">{formatCurrency(showPrice)}</p>
                     </div>
                     {card ?
                         <div className="payment-data">
-                            <CardMask />
-                            <Button className='payment-btn' buttonOnClick={handleClick}>
-                                EFETUAR PAGAMENTO
-                            </Button>
+                            <CardMask setShowButton={setShowButton} />
+                            {showButton &&
+                                <Button className="payment-btn" buttonOnClick={handleClick}>
+                                    EFETUAR PAGAMENTO
+                                </Button>  
+                            }
+                          
                             {loading && <Loading />}
                         </div>
                         : pix ? <div className="payment-data">

@@ -1,15 +1,24 @@
 import React from 'react';
 import Cards from 'elt-react-credit-cards';
+import luhn from 'luhn'
 import InputMask from './inputMask';
 import { useState } from 'react';
 
 
-const CardMask = () => {
+const CardMask = ({setShowButton}) => {
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
   const [cvc, setCvc] = useState('');
   const [expiry, setExpiry] = useState('');
   const [focus, setFocus] = useState('');
+
+const validateCard = luhn.validate(number)
+
+if(validateCard) {
+  setShowButton(true)
+}else{
+  setShowButton(false)
+}
 
   return (
     <>
@@ -63,6 +72,7 @@ const CardMask = () => {
               onFocus={e => setFocus(e.target.name)}
               className="form-card-cvv"
             />
+           
           </div>
         </div>
       </form>

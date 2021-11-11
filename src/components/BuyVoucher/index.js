@@ -11,7 +11,8 @@ import "./responsive.css";
 
 const BuyVouchers = ({
     setPayVouchers,
-    hidden
+    hidden,
+    setShowPrice
 }) => {
 
     const [noOrders, setNoOrders] = useState(true);
@@ -59,6 +60,7 @@ const BuyVouchers = ({
         }
         createVoucher(docObj).then(() => {
             setPayVouchers(true, hidden(false))
+            setShowPrice(totalPrice)
         })
     };
 

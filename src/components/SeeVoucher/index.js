@@ -5,16 +5,18 @@ import { getVoucher } from "../../services";
 
 const SeeVoucher = () => {
   const [vouchers, setVouchers] = useState([])
+  const currentUser = localStorage.getItem('uid');
 
   useEffect(() => {
     getVoucher()
       .then(snap => {
         const vouchers = []
         snap.forEach(doc => {
-          vouchers.push(doc.data())
+          if(currentUser === doc.data().userId){
+            vouchers.push(doc.data())
+          }
         })
         setVouchers(vouchers)
-        console.log(vouchers)
       })
   }, [])
 
@@ -22,7 +24,7 @@ const SeeVoucher = () => {
   return (
     <section>
       <div className='seevoucher-main'>
-        {
+      {
           vouchers.map((item, key) => (
             <div className='seevoucher-item'>
               <div className='voucher-info'>
@@ -50,3 +52,25 @@ const SeeVoucher = () => {
 }
 
 export default SeeVoucher;
+
+/*
+ {
+          vouchers.map((item, key) => (
+            <div className='seevoucher-item'>
+              <div className='voucher-info'>
+                <input type='checkbox' />
+                <div className='voucher-detail'>
+                  <p>{item.userId}</p>
+                  {item.vouchers.map((voucher) => (
+                    <p>{voucher.price} <b>{voucher.qtd}</b></p>
+                  ))}
+                </div>
+              </div>
+              <select name='select' className='select-options'>
+                <option value='email'>Email</option>
+                <option value='json'>JSON</option>
+              </select>
+            </div>
+          ))
+        }
+*/
