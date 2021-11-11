@@ -26,14 +26,13 @@ Pensando nisso, surgiu a Maria Voucher, uma aplicação Web com foco em empresas
 confraternizar de forma virtual, aonde o representante da empresa possa se cadastrar, escolher a
 quantidade de vouchers e seus valores, efetuar o pagamento, gerar os vouchers e compartilhar com seu time.
 
+ --
 Saudades de um Happy Hour, né, minha filha? 
 Compre com Maria Voucher os melhores cupons pra toda a galera da empresa sextar de forma segura e com qualidade.
 <br>
----
-<br>
 
 <div align="center">
-  <img alt="logo" height="200" width="200" src="./src/img/mariaVoucher.jpeg">
+  <img alt="logo" height="250" width="200" src="./src/img/mariaVoucher.jpeg">
 </div>
 
 <br>
@@ -77,15 +76,6 @@ Durante o processo, criamos a identidade visual e definimos a paleta de cores in
 
 Usamos o Figma para desenvolver o protótipo de alta fidelidade.
 
----
-
-<div align="center">
-  <img alt="prototipo-login" src="./src/img/inicial.png">
-
-</div>
-
----
-
 ### Paleta de Cores
 
 <div align="center">
@@ -114,7 +104,7 @@ O projeto foi realizado por um squad composto por 6 desenvolvedoras front-end em
 - <br/>
   
 
---
+---
 ## 🚀 Tecnologias Utilizadas
 
 <br>
@@ -223,21 +213,18 @@ O projeto foi realizado por um squad composto por 6 desenvolvedoras front-end em
 - #### Mobile
 <br>
 <div align="center">
-  <img alt="desktop" src="./src/img/mobile1.gif">
-</div>
-<br>
-<div align="center">
-  <img alt="desktop" src="./src/img/mobile2.gif">
+  <img alt="desktop" width="261" src="./src/img/mobile1.gif">
+  <img alt="desktop"  width="261"src="./src/img/mobile2.gif">
 </div>
 <br>
 
 
 
 ---
+ 
+<h2 align="center"> 👩‍💻 Colaboradoras</h2><br>
 
-## 👩‍💻 Colaboradoras
-
-<table>
+<table align="center">
   <tr>
       <td align="center">
             <a href="#">
@@ -267,7 +254,7 @@ O projeto foi realizado por um squad composto por 6 desenvolvedoras front-end em
   </tr>
 </table>
 
-<table>
+<table align="center">
       <tr>
       <td>
       <a href="#">
